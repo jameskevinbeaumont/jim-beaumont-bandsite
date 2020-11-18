@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'Avenir Next';
+  src: url("../../assets/fonts/Linotype-Avenir-Next-LT-Pro.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url("../../assets/fonts/Linotype-Avenir-Next-LT-Pro-Demi.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir Next';
+  src: url("../../assets/fonts/Linotype-Avenir-Next-LT-Pro-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+/*# sourceMappingURL=styles.css.map */
