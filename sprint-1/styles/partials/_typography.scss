@@ -1,6 +1,4 @@
 // Global Font Variables
-// Font Family
-$font-family: 'Avenir Next';
 // Base Font Size
 $base-font-size: 16px;
 // Desktop and Tablet
@@ -21,8 +19,8 @@ $dt-h5-label-lh: 1.25 * $base-font-size;
 // Mobile
 $m-h1-header: 1.5 * $base-font-size;
 $m-h1-header-lh: 2 * $base-font-size;
-$m-h2-Subheader: .875 * $base-font-size;
-$m-h2-Subheader-lh: 1.375 * $base-font-size;
+$m-h2-subheader: .875 * $base-font-size;
+$m-h2-subheader-lh: 1.375 * $base-font-size;
 $m-h4-p: .8125 * $base-font-size;
 $m-h4-p-lh: 1.125 * $base-font-size;
 $m-h4-list-contact: .8125 * $base-font-size;
@@ -31,26 +29,27 @@ $m-h5-label: .75 * $base-font-size;
 $m-h5-label-lh: 1.25 * $base-font-size;
 // Text Color
 $font-color: #323232;
-// Font Weight
-$demi: 600;
+// Font Faces
 // Global Font Faces
 @font-face {
     font-family: 'Avenir Next';
-    src: url('../../assets/fonts/Linotype-Avenir-Next-LT-Pro.ttf') format('truetype');
+    src: url('../assets/fonts/Linotype-AvenirNextLTPro-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Avenir Next';
-    src: url('../../assets/fonts/Linotype-Avenir-Next-LT-Pro-Demi.ttf') format('truetype');
-    font-weight: $demi;
+    src: url('../assets/fonts/Linotype-AvenirNextLTPro-Demi.otf') format('opentype');
+    font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Avenir Next';
-    src: url('../../assets/fonts/Linotype-Avenir-Next-LT-Pro-Bold.ttf') format('truetype');
+    src: url('../assets/fonts/Linotype-AvenirNextLTPro-Bold.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
 }
+// Font Family
+$font-family: "Avenir Next";

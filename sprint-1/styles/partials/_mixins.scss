@@ -1,0 +1,48 @@
+// Breakpoints
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+      @content;
+    }
+  }
+
+  @mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @mixin mobile-h1() {
+    font-size: $m-h1-header;
+    line-height: $m-h1-header-lh;
+    font-weight: bold;
+  }
+
+  @mixin mobile-h2() {
+    font-size: $m-h2-subheader;
+    line-height: $m-h2-subheader-lh;
+    font-weight: bold;
+  }
+
+  @mixin mobile-p() {
+    font-size: $m-h4-p;
+    line-height: $m-h4-p-lh;
+  }
+
+  @mixin mobile-h4-list-contact() {
+    font-size: $m-h4-list-contact;
+    line-height: $m-h4-list-contact-lh;
+  }
+
+  @mixin mobile-h5-label() {
+    font-size: $m-h5-label;
+    line-height: $m-h5-label-lh;
+  }
