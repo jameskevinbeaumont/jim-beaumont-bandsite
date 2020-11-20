@@ -12,6 +12,10 @@
     width: 100%;
 }
 
+p {
+    margin: 0;
+}
+
 a {
     text-decoration: none;
     color: $color-text-label-style;
@@ -94,7 +98,8 @@ a {
     &__title {
         @include mobile-h1;
         @extend .about__common;
-        margin-top: 11%;
+        padding-top: 11%;
+        padding-bottom: 8%;
     }
     &__image {
         width: 100%;
@@ -103,17 +108,17 @@ a {
         @include mobile-h2;
         @extend .about__common;
         font-weight: 600;
-        margin-top: 8%;
+        padding-top: 9%;
     }
     &__quote-name {
         @include mobile-h4-list-contact;
         @extend .about__common;
         font-weight: 600;
-        margin-top: 6%;
+        padding-top: 11%;
     }
     &__names {
         @extend .about__subhead;
-        margin-top: 10%;
+        padding-top: 14%;
         &:after {
             content: '\00E9';
         }
@@ -121,9 +126,11 @@ a {
     &__main {
         @include mobile-h5-label;
         @extend .about__common;
-        margin: 3%;
+    }
+    &__main-p {
+        padding-top: 8%;    
         &--end {
-            margin-bottom: 5%;
+            padding-bottom: 14%;
         }
     }
     &__spec-last-name {
@@ -143,8 +150,61 @@ a {
     &__title {
         @extend .about__title;
     }
-    &__img {
-        width: 100%;
-        padding-bottom: 5%;
+    &__images {
+        &--img {
+            width: 100%;
+            padding-bottom: 6%;
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: $color-nav-bg-fill;
+    &__header {
+        &--GIT {
+            @include mobile-h1;
+            color: $color-text-offset;
+            padding-top: 14%;
+            padding-bottom: 8%;
+        }
+        &--icons {
+           padding-right: 5%; 
+        }
+    }
+    &__body {
+    }
+    &__body-item {
+        color: $color-text-offset;
+        margin: 0;
+        &--h2 {
+            @include mobile-h2;
+            padding-top: 8%;
+        }
+        &--h2-2 {
+            @extend .footer__body-item--h2;
+            padding-top: 0;
+            padding-bottom: 5%;
+        }
+        &--p {
+            @include mobile-p;
+        }
+        &--p-2 {
+            @extend .footer__body-item--p;
+            padding-top: 8%;
+        }
+    }
+    &__copyright {
+        color: $color-text-offset;
+        width: 65%;
+        margin: 0;
+        &--p {
+            @include mobile-p;
+            padding-top: 10%;
+        }
+
     }
 }
