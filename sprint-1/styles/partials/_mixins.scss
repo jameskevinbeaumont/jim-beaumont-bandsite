@@ -46,3 +46,28 @@ $desktop-breakpoint: 1280px;
     font-size: $m-h5-label;
     line-height: $m-h5-label-lh;
   }
+
+  @mixin tablap-h1-hero () {
+    font-size: $dt-h1-hero-header;
+    line-height: $dt-h1-hero-header-lh;
+  }
+
+  @mixin tablap-h1 {
+    font-size: $dt-h1-header;
+    line-height: $dt-h1-header-lh;
+  }
+
+  @mixin tablap-h2 {
+    font-size: $dt-h2-header;
+    line-height: $dt-h2-header-lh;
+  }
+
+  @mixin tablap-h3 {
+    font-size: $dt-h3-Subheader;
+    line-height: $dt-h3-Subheader-lh;
+  }
+
+  @mixin tablap-p-comments {
+    font-size: $dt-h4-p-comments;
+    line-height: $dt-h4-p-comments-lh;
+  }

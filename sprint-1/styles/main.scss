@@ -43,6 +43,10 @@ a {
         align-items: center;
         width: 100%;
         height: 80px;
+        @include tablet {
+            flex-direction: row;
+            justify-content: flex-start;
+        }
     }
     &__nav-link {
         /* Header Block - Navigation Link */
@@ -54,14 +58,33 @@ a {
         list-style-type: none;
         padding: 0;
         width: 100%;
+        @include tablet {
+            width: 20%;
+            align-items: flex-start; 
+        }
     }
     &__nav-list-item {
         @include mobile-h2;
         text-align: center;
         width: 50%;
+        @include tablet {
+            width: 70%;
+            padding-top: 36.859px;
+            padding-bottom: 21.5px;
+        }
+        &--shows {
+            @extend .header__nav-list-item;
+            @include tablet {
+                padding-left: 40%;
+            }
+        }
         &--underline {
             @extend .header__nav-list-item;
             border-bottom: 3px solid $color-text-field-border;
+            @include tablet {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
         }
     } 
 }
@@ -71,6 +94,9 @@ a {
     padding-left: 5%;
     padding-right: 5%;
     background-color: $color-hero-img-bg;
+    @include tablet {
+        padding: 0;
+    }
     &__image {
         width: 100%;
         opacity: 0.5;
@@ -83,6 +109,10 @@ a {
         color: $color-text-offset;
         width: 85%;
         padding-right: 15%;
+        @include tablet {
+            @include tablap-h1-hero;
+            width: 92%;
+        }
     }
 }
 
@@ -91,6 +121,10 @@ a {
     flex-direction: column;
     padding-left: 5%;
     padding-right: 5%;
+    @include tablet {
+        padding-left: 3.125%;
+        padding-right: 3.125%;    
+    }
     &__common {
         color: $color-paragraph-text;
         width: 100%;        
@@ -100,6 +134,11 @@ a {
         @extend .about__common;
         padding-top: 11%;
         padding-bottom: 8%;
+        @include tablet {
+            @include tablap-h1;
+            padding-top: 7%;
+            padding-bottom: 4%;
+            }
     }
     &__image {
         width: 100%;
@@ -109,32 +148,73 @@ a {
         @extend .about__common;
         font-weight: 600;
         padding-top: 9%;
+        @include tablet {
+            @include tablap-h2;
+            padding-top: 7%;
+        }
     }
     &__quote-name {
         @include mobile-h4-list-contact;
         @extend .about__common;
         font-weight: 600;
         padding-top: 11%;
+        @include tablet {
+            @include tablap-h3;
+            padding-top: 4%;
+        }
     }
     &__names {
         @extend .about__subhead;
         padding-top: 14%;
+        @include tablet {
+            @include tablap-h2;
+            padding-top: 7%;
+        }        
         &:after {
             content: '\00E9';
         }
     }
-    &__main {
-        @include mobile-h5-label;
-        @extend .about__common;
+}
+
+.about-detail {
+    @include flex-center;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-right: 5%;
+    @include tablet {
+        flex-direction: row;
+        padding-left: 3.125%;
+        padding-right: 3.125%;    
+    }
+    &__common {
+        color: $color-paragraph-text;
+        width: 100%;        
     }
     &__main-p {
+        @include mobile-h5-label;
+        @extend .about-detail__common;
         padding-top: 8%;    
+        @include tablet {
+            @include tablap-p-comments;
+            padding-top: 3%;
+            padding-bottom: 5%;
+        }
+        &--middle {
+            display: none;
+            @include tablet {
+                display: block;
+                padding-left: 3.25%;
+            }
+        }
         &--end {
             padding-bottom: 14%;
         }
     }
     &__spec-last-name {
         @include mobile-h5-label;
+        @include tablet {
+            @include tablap-p-comments;
+        }
         &:after {
             content: $last-name;
         }
@@ -147,13 +227,30 @@ a {
     padding-left: 5%;
     padding-right: 5%;
     background-color: $color-text-field-bg-fill;
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        padding-left: 0;
+        padding-right: 0;    
+    }
     &__title {
         @extend .about__title;
+        @include tablet {
+            padding-left: 3.125%;
+            padding-right: 3.125%;   
+            padding-bottom: 8%; 
+        }
     }
     &__images {
         &--img {
             width: 100%;
             padding-bottom: 6%;
+            @include tablet {
+                width: 32%;
+                padding-left: 3.25%;
+                padding-bottom: 3.25%;
+            }
         }
     }
 }
