@@ -11,8 +11,9 @@ $color-text-offset: #FFFFFF;
 $color-nav-bg-fill: #323232;
 $color-primary-cta: #323232;
 $color-primary-cta-hover: #0065AD;
-$color-hero-img-bg: #323232;
+// $color-hero-img-bg: #323232;
+$color-hero-img-bg: rgba(50,50,50,0.5);
 
 // Misc. Variables
 $last-name: 'Aug' + '\00E9';
-
+$copyright: '\00A9';

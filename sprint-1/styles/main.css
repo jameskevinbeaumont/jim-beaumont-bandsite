@@ -103,12 +103,14 @@ a {
   display: flex;
   list-style-type: none;
   padding: 0;
+  margin-top: 15px;
   width: 100%;
 }
 
 @media screen and (min-width: 768px) {
   .header__nav-list {
     width: 20%;
+    margin-top: 12px;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -149,6 +151,7 @@ a {
 }
 
 .hero {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -158,9 +161,11 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-left: 5%;
-  padding-right: 5%;
-  background-color: #323232;
+  height: 60vw;
+  width: 100%;
+  background-image: url("../assets/images/Hero_Festival_Medium.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media screen and (min-width: 768px) {
@@ -169,10 +174,14 @@ a {
   }
 }
 
-.hero__image {
-  width: 100%;
-  opacity: 0.5;
-  padding-top: .3%;
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(50, 50, 50, 0.5);
 }
 
 .hero__text {
@@ -408,6 +417,8 @@ a {
 
 @media screen and (min-width: 768px) {
   .gallery__title {
+    font-size: 36px;
+    line-height: 44px;
     padding-left: 3.125%;
     padding-right: 3.125%;
     padding-bottom: 8%;
@@ -440,22 +451,114 @@ a {
   background-color: #323232;
 }
 
-.footer__header--GIT {
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: bold;
-  color: #FFFFFF;
-  padding-top: 14%;
-  padding-bottom: 8%;
+@media screen and (min-width: 768px) {
+  .footer__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 15vw;
+  }
 }
 
-.footer__header--icons {
-  padding-right: 5%;
+.footer__header-left {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__header-left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 70%;
+  }
+}
+
+.footer__header-left-GIT {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+  color: #FFFFFF;
+  padding-top: 14%;
+  padding-bottom: 5%;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__header-left-GIT {
+    width: 65%;
+    padding-top: 10%;
+  }
+}
+
+.footer__header-left-icons {
+  width: 65%;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__header-left-icons {
+    width: 50%;
+  }
+}
+
+.footer__header-left-icons--icon {
+  padding-right: 18%;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__header-left-icons--icon {
+    padding-top: 12%;
+    padding-right: 15%;
+  }
+}
+
+.footer__header-right {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__header-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 30%;
+    padding-top: 3%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .footer__body-item {
   color: #FFFFFF;
+  width: 100%;
   margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__body-item {
+    padding-right: 5%;
+  }
 }
 
 .footer__body-item--h2, .footer__body-item--h2-2 {
@@ -481,13 +584,30 @@ a {
 
 .footer__copyright {
   color: #FFFFFF;
-  width: 65%;
+  width: 70%;
   margin: 0;
 }
 
 .footer__copyright--p {
   font-size: 13px;
   line-height: 18px;
-  padding-top: 10%;
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__copyright--p {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+}
+
+.footer__copyright--cr {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.footer__copyright--cr:after {
+  content: "©";
 }
 /*# sourceMappingURL=main.css.map */

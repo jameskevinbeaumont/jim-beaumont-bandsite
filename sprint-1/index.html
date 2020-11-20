@@ -15,17 +15,17 @@
                 <img src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo">
             </a>
             <ul class="header__nav-list">
-                <li class="header__nav-list-item--underline"><a class="a--select" href="#">Biography</a></li>
-                <li class="header__nav-list-item--shows"><a href="#">Shows</a></li>
+                <li class="header__nav-list-item--underline"><a class="a--select" href="./pages/biography.html">Biography</a></li>
+                <li class="header__nav-list-item--shows"><a href="./pages/shows.html">Shows</a></li>
             </ul>
         </nav>
         <!-- Hero Section -->
     </header>
     <main>
-        <section class="hero">
-            <img class="hero__image" src="./assets/images/Hero_Festival_Medium.jpg" alt="hero image">
+        <div class="hero">
+            <!-- <img class="hero__image" src="./assets/images/Hero_Festival_Medium.jpg" alt="hero image"> -->
             <p class="hero__text">Gaspard Auge & Xavier de Rosnay</p>
-        </section>
+        </div>
         <section class="about">
             <p class="about__title">About The Musicians</p>
             <img class="about__image" src="./assets/images/Two_Musicians_Medium.jpg" alt="two musicians">
@@ -75,10 +75,17 @@
         </section>
         <section class="footer">
             <div class="footer__header">
-                <p class="footer__header--GIT">Get In Touch</p>
-                <a href="https://www.instagram.com" target="_blank"><img class="footer__header--icons" src="./assets/icons/Icon-instagram.svg" alt="instagram"></a>
-                <a href="https://www.facebook.com" target="_blank"><img class="footer__header--icons" src="./assets/icons/Icon-facebook.svg" alt="facebook"></a>
-                <a href="https://www.twitter.com" target="_blank"><img class="footer__header--icons" src="./assets/icons/Icon-twitter.svg" alt="twitter"></a>
+                <div class="footer__header-left">
+                    <p class="footer__header-left-GIT">Get In Touch</p>
+                    <div class="footer__header-left-icons">
+                        <a href="https://www.instagram.com" target="_blank"><img class="footer__header-left-icons--icon" src="./assets/icons/Icon-instagram.svg" alt="instagram"></a>
+                        <a href="https://www.facebook.com" target="_blank"><img class="footer__header-left-icons--icon" src="./assets/icons/Icon-facebook.svg" alt="facebook"></a>
+                        <a href="https://www.twitter.com" target="_blank"><img class="footer__header-left-icons--icon" src="./assets/icons/Icon-twitter.svg" alt="twitter"></a>
+                    </div>                        
+                </div>
+                <div class="footer__header-right">
+                    <img class="footer__header--logo" src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo">
+                </div>
             </div>
             <div class="footer__body">
                 <div class="footer__body-item">
@@ -104,7 +111,7 @@
                 </div>
             </div>
             <div class="footer__copyright">
-                <p class="footer__copyright--p">Copyright The Bees Knees <span></span> 2018 All Rights Reserved</p>
+                <p class="footer__copyright--p">Copyright The Bees Knees <span class="footer__copyright--cr"></span> 2018 All Rights Reserved</p>
             </div>
         </section>
     </main>
