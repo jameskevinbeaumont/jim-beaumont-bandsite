@@ -1,8 +1,9 @@
-// Breakpoints
+// Breakpoint Variables
 $tablet-breakpoint: 768px;
-$desktop-breakpoint: 1280px;
-
-@mixin tablet {
+$desktop-breakpoint: 1200px;
+  
+  // Breakpoint Mixins
+  @mixin tablet {
     @media screen and (min-width: $tablet-breakpoint) {
       @content;
     }
@@ -14,12 +15,14 @@ $desktop-breakpoint: 1280px;
     }
   }
 
+  // General Helper Mixins
   @mixin flex-center() {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
+  // Font based Mixins
   @mixin mobile-h1() {
     font-size: $m-h1-header;
     line-height: $m-h1-header-lh;

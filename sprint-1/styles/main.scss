@@ -51,13 +51,17 @@ a {
     &__nav-link {
         /* Header Block - Navigation Link */
         margin: 15px 8% 0 5%;
+        @include desktop {
+            margin-left: 15%;
+            margin-right: 5%;
+        }
     }
     &__nav-list {
         /* Header Block - Navigation List */
         display: flex;
         list-style-type: none;
         padding: 0;
-        margin-top: 15px;
+        margin-top: 8px;
         width: 100%;
         @include tablet {
             width: 20%;
@@ -69,6 +73,7 @@ a {
         @include mobile-h2;
         text-align: center;
         width: 50%;
+        padding-bottom: 5.5px;
         @include tablet {
             width: 70%;
             padding-top: 36.859px;
@@ -79,13 +84,21 @@ a {
             @include tablet {
                 padding-left: 40%;
             }
+            @include desktop {
+                padding-left: 6%;
+            }
         }
         &--underline {
             @extend .header__nav-list-item;
-            border-bottom: 3px solid $color-text-field-border;
+            border-bottom: 4px solid $color-text-field-border;
             @include tablet {
                 padding-left: 5%;
                 padding-right: 5%;
+            }
+            @include desktop {
+                width: 7.5vw;
+                padding-left: 1%;
+                padding-right: 1%;
             }
         }
     } 
@@ -99,12 +112,6 @@ a {
     background-image: url('../assets/images/Hero_Festival_Medium.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    // filter: opacity(80%);
-    // opacity: 0.5;
-    // background-color: $color-hero-img-bg;
-    // width: 100%;
-    // padding-left: 5%;
-    // padding-right: 5%;
     @include tablet {
         padding: 0;
     }
@@ -117,11 +124,6 @@ a {
         left: 0px;
         background-color: $color-hero-img-bg;
     }
-    // &__image {
-    //     width: 100%;
-    //     opacity: 0.5;
-    //     padding-top: .3%;
-    // }
     &__text {
         position: absolute;
         @include mobile-h1;
@@ -129,9 +131,16 @@ a {
         color: $color-text-offset;
         width: 85%;
         padding-right: 15%;
+        left: 5%;
         @include tablet {
             @include tablap-h1-hero;
             width: 92%;
+            left: 3%;
+        }
+        @include desktop {
+            width: 85%;
+            padding-left: 15%;
+            left: 0;
         }
     }
 }
@@ -144,6 +153,10 @@ a {
     @include tablet {
         padding-left: 3.125%;
         padding-right: 3.125%;    
+    }
+    @include desktop {
+        padding-left: 15%;
+        padding-right: 15%;    
     }
     &__common {
         color: $color-paragraph-text;
@@ -162,6 +175,10 @@ a {
     }
     &__image {
         width: 100%;
+        @include desktop {
+            padding-left: 8%;
+            padding-right: 8%;
+        }
     }
     &__subhead {
         @include mobile-h2;
@@ -171,6 +188,10 @@ a {
         @include tablet {
             @include tablap-h2;
             padding-top: 7%;
+        }
+        @include desktop {
+            padding-left: 8%;
+            padding-right: 8%;
         }
     }
     &__quote-name {
@@ -182,6 +203,10 @@ a {
             @include tablap-h3;
             padding-top: 4%;
         }
+        @include desktop {
+            padding-left: 8%;
+            padding-right: 8%;
+        }
     }
     &__names {
         @extend .about__subhead;
@@ -189,7 +214,10 @@ a {
         @include tablet {
             @include tablap-h2;
             padding-top: 7%;
-        }        
+        }
+        @include desktop {
+            padding-top: 6%;
+        }     
         &:after {
             content: '\00E9';
         }
@@ -205,6 +233,11 @@ a {
         flex-direction: row;
         padding-left: 3.125%;
         padding-right: 3.125%;    
+    }
+    @include desktop {
+        // flex-direction: row;
+        padding-left: 20.65%;
+        padding-right: 20.65%;    
     }
     &__common {
         color: $color-paragraph-text;
@@ -224,6 +257,9 @@ a {
             @include tablet {
                 display: block;
                 padding-left: 3.25%;
+            }
+            @include desktop {
+                padding-left: 6%;
             }
         }
         &--end {
@@ -254,6 +290,10 @@ a {
         padding-left: 0;
         padding-right: 0;    
     }
+    @include desktop {
+        padding-left: 13%;
+        padding-right: 13%;
+    }
     &__title {
         @extend .about__title;
         @include tablet {
@@ -282,10 +322,17 @@ a {
     padding-left: 3%;
     padding-right: 3%;
     background-color: $color-nav-bg-fill;
+    @include desktop {
+        padding-left: 15.4%;
+        padding-right: 15.4%;    
+    }
     &__header {
         @include tablet {
             display: flex;
             height: 15vw;
+        }
+        @include desktop {
+            height: 10vw;
         }
     }
     &__header-left {
@@ -306,17 +353,28 @@ a {
                 width: 65%;
                 padding-top: 10%;
             }
+            @include desktop {
+                @include tablap-h2;
+                width: 35%;
+                padding-top: 3%;
+            }
         }
         &-icons {
             width: 65%;
             @include tablet {
                 width: 50%;
             }
+            @include desktop {
+                padding-bottom: 8%;
+            }
             &--icon {
                 padding-right: 18%;
                 @include tablet {
                     padding-top: 12%;
                     padding-right: 15%;
+                }
+                @include desktop {
+                    padding-right: 8%;
                 }
              }     
         }
@@ -329,6 +387,10 @@ a {
             align-items: center;
             width: 30%;
             padding-top: 3%;
+        @include desktop {
+            padding-top: 0;
+            padding-bottom: 2%;
+        }
         }
         &--logo {
             }
@@ -346,6 +408,10 @@ a {
         margin: 0;
         @include tablet {
             padding-right: 5%;
+        }
+        @include desktop {
+            width: 30%;
+            padding-right: 2%;
         }
         &--h2 {
             @include mobile-h2;
