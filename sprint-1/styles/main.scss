@@ -5,8 +5,8 @@
 * {
     box-sizing: border-box;
 }
-/* Body Block */
 .body {
+    /* Body Block */
     font-family: $font-family;
     margin: 0;
     width: 100%;
@@ -17,12 +17,17 @@ p {
 }
 
 a {
+    /* Anchor Tag */
     text-decoration: none;
     color: $color-text-label-style;
+    &:hover {
+        color: rgb(143, 136, 149);
+    }
 }
 
 .a {
     &--select {
+        /* Anchor Tag Select Modifier */
         color: $color-text-offset;
     }
 }
@@ -34,26 +39,29 @@ a {
     margin: 0;
     width: 100%;
     background-color: $color-nav-bg-fill;
-    &__nav {
-        /* Header Block - Navigation Bar */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-content: center;
-        align-items: center;
-        width: 100%;
-        height: 80px;
-        @include tablet {
-            flex-direction: row;
-            justify-content: flex-start;
-        }
+}
+.navbar {
+    /* Navigation Bar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    @include tablet {
+        flex-direction: row;
+        justify-content: flex-start;
     }
     &__nav-link {
         /* Header Block - Navigation Link */
-        margin: 15px 8% 0 5%;
+        margin: 15px 7% 0 3%;
+        @include tablet {
+            margin: 5px 7% 0 3%;
+        }
         @include desktop {
-            margin-left: 15%;
-            margin-right: 5%;
+            margin-left: 12.5vw;
+           margin-right: 3.89vw;
         }
     }
     &__nav-list {
@@ -70,17 +78,18 @@ a {
         }
     }
     &__nav-list-item {
-        @include mobile-h2;
+        /* Header Block - Navigation List Item */
+        @include mobile-h2();
         text-align: center;
         width: 50%;
         padding-bottom: 5.5px;
         @include tablet {
             width: 70%;
-            padding-top: 36.859px;
-            padding-bottom: 21.5px;
+            @include padding-tb(37.859px, 20.5px);
         }
         &--shows {
-            @extend .header__nav-list-item;
+            /* Header Block - Navigation List Item - Shows Modifier */
+            @extend .navbar__nav-list-item;
             @include tablet {
                 padding-left: 40%;
             }
@@ -89,22 +98,27 @@ a {
             }
         }
         &--underline {
-            @extend .header__nav-list-item;
+            /* Header Block - Navigation List Item - Underline Modifier */
+            @extend .navbar__nav-list-item;
             border-bottom: 4px solid $color-text-field-border;
             @include tablet {
-                padding-left: 5%;
-                padding-right: 5%;
+                @include padding-lr(5%, 5%);
             }
             @include desktop {
                 width: 7.5vw;
-                padding-left: 1%;
-                padding-right: 1%;
+                @include padding-lr(1%, 1%);
             }
         }
     } 
 }
 
+.main {
+    /* Main Block */
+    background-color: $color-background;
+}
+
 .hero {
+    /* Hero Block */
     position: relative;
     @include flex-center;
     height: 60vw;
@@ -116,6 +130,7 @@ a {
         padding: 0;
     }
     &::before {
+        /* Hero Block - Pseudo Before Element */
         content: "";
         position: absolute;
         top: 0px;
@@ -125,6 +140,7 @@ a {
         background-color: $color-hero-img-bg;
     }
     &__text {
+        /* Hero Block - Text Element */
         position: absolute;
         @include mobile-h1;
         font-weight: bold;
@@ -138,78 +154,88 @@ a {
             left: 3%;
         }
         @include desktop {
-            width: 85%;
-            padding-left: 15%;
+            width: 70%;
+            padding-left: 12.5vw;
             left: 0;
+        }
+    }
+    &__spec-last-name {
+        /* Hero Block - Special Last Name Element */
+        @include mobile-h1;
+        @include tablet {
+            @include tablap-h1-hero;
+        }
+        &:after {
+            content: $last-name;
         }
     }
 }
 
 .about {
+    /* About Block */
     @include flex-center;
     flex-direction: column;
-    padding-left: 5%;
-    padding-right: 5%;
+    @include padding-lr(5%, 5%);
     @include tablet {
-        padding-left: 3.125%;
-        padding-right: 3.125%;    
+        @include padding-lr(3.125%, 3.125%);
     }
     @include desktop {
-        padding-left: 15%;
-        padding-right: 15%;    
+        @include padding-lr(12.5vw, 12.5vw);
     }
     &__common {
+        /* About Block - Common Element */
         color: $color-paragraph-text;
         width: 100%;        
     }
     &__title {
+        /* About Block - Title Element */
         @include mobile-h1;
         @extend .about__common;
-        padding-top: 11%;
-        padding-bottom: 8%;
+        @include padding-tb(11%, 8%);
         @include tablet {
             @include tablap-h1;
-            padding-top: 7%;
-            padding-bottom: 4%;
+            @include padding-tb(7%, 4%);
             }
-    }
-    &__image {
-        width: 100%;
         @include desktop {
-            padding-left: 8%;
-            padding-right: 8%;
+            @include padding-tb(5%, 5%);
         }
     }
-    &__subhead {
-        @include mobile-h2;
+    &__image {
+        /* About Block - Image Element */
+        width: 100%;
+        @include desktop {
+            @include padding-lr(7.8vw, 7.8vw);
+        }
+    }
+    &__subtitle {
+        /* About Block - Subtitle Element */
+        @include mobile-h2(600);
         @extend .about__common;
-        font-weight: 600;
         padding-top: 9%;
         @include tablet {
             @include tablap-h2;
             padding-top: 7%;
         }
         @include desktop {
-            padding-left: 8%;
-            padding-right: 8%;
+            @include padding-lr(7.8vw, 7.8vw);
         }
     }
     &__quote-name {
-        @include mobile-h4-list-contact;
+        /* About Block - Quote Name Element */
+        @include mobile-h4-list-contact(600);
         @extend .about__common;
-        font-weight: 600;
         padding-top: 11%;
         @include tablet {
-            @include tablap-h3;
+            @include tablap-h3(400);
             padding-top: 4%;
         }
         @include desktop {
-            padding-left: 8%;
-            padding-right: 8%;
+            @include padding-lr(7.8vw, 7.8vw);
         }
     }
     &__names {
-        @extend .about__subhead;
+        /* About Block - Names Element */
+        @extend .about__subtitle;
         padding-top: 14%;
         @include tablet {
             @include tablap-h2;
@@ -225,48 +251,53 @@ a {
 }
 
 .about-detail {
+    /* About Detail Block */
     @include flex-center;
     flex-direction: column;
     padding-left: 5%;
     padding-right: 5%;
     @include tablet {
         flex-direction: row;
-        padding-left: 3.125%;
-        padding-right: 3.125%;    
+        @include padding-lr(3.125%, 3.125%);
     }
     @include desktop {
-        // flex-direction: row;
-        padding-left: 20.65%;
-        padding-right: 20.65%;    
+        @include padding-lr(20.4vw, 20.4vw);
     }
     &__common {
+        /* About Detail Block - Common Element */
         color: $color-paragraph-text;
         width: 100%;        
     }
-    &__main-p {
+    &__paragraph {
+        /* About Detail Block - Paragraph Element */
         @include mobile-h5-label;
         @extend .about-detail__common;
         padding-top: 8%;    
         @include tablet {
             @include tablap-p-comments;
-            padding-top: 3%;
-            padding-bottom: 5%;
+            @include padding-tb(3%, 5%);
         }
-        &--middle {
+        @include desktop {
+            padding-bottom: 7%;
+        }
+        &--col-divider {
+            /* About Detail Block - Paragraph Element - Column Divider Modifier */
             display: none;
             @include tablet {
                 display: block;
                 padding-left: 3.25%;
             }
             @include desktop {
-                padding-left: 6%;
+                padding-left: 5%;
             }
         }
         &--end {
+            /* About Detail Block - Paragraph Element - End Modifier */
             padding-bottom: 14%;
         }
     }
     &__spec-last-name {
+        /* About Detail Block - Special Last Name Element */
         @include mobile-h5-label;
         @include tablet {
             @include tablap-p-comments;
@@ -277,7 +308,8 @@ a {
     }
 }
 
-.gallery {
+.photo-gallery {
+    /* Photo Gallery Block */
     @include flex-center;
     flex-direction: column;
     padding-left: 5%;
@@ -287,46 +319,58 @@ a {
         flex-direction: row;
         flex-wrap: wrap;
         align-content: flex-start;
-        padding-left: 0;
-        padding-right: 0;    
-    }
+        @include padding-lr(0, 0);
+   }
     @include desktop {
-        padding-left: 13%;
-        padding-right: 13%;
+        @include padding-lr(12.5vw, 12.5vw);
     }
     &__title {
+        /* Photo Gallery Block - Title Element */
         @extend .about__title;
         @include tablet {
             @include tablap-h1;
-            padding-left: 3.125%;
-            padding-right: 3.125%;   
-            padding-bottom: 8%; 
+            padding: 5% 3.125% 7% 3.125%;
+        }
+        @include desktop {
+            @include padding-lr(1.75vw, 1.75vw);
         }
     }
-    &__images {
-        &--img {
-            width: 100%;
-            padding-bottom: 6%;
-            @include tablet {
-                width: 32%;
-                padding-left: 3.25%;
-                padding-bottom: 3.25%;
-            }
+}
+
+.photo {
+    /* Photo Block */
+    &__image {
+        /* Photo Block - Image Element */
+        width: 100%;
+        padding-bottom: 6%;
+        filter: grayscale(1);
+        &:hover {
+            filter: grayscale(0);
+        }
+        @include tablet {
+            width: 32%;
+            padding-left: 3.25%;
+            padding-bottom: 3.25%;
+        }
+        @include desktop {
+            padding-left: 1.67vw;
+            padding-bottom: 1.67vw;
         }
     }
 }
 
 .footer {
+    /* Footer Block */
     display: flex;
     flex-direction: column;
     padding-left: 3%;
     padding-right: 3%;
     background-color: $color-nav-bg-fill;
     @include desktop {
-        padding-left: 15.4%;
-        padding-right: 15.4%;    
+        @include padding-lr(14.2vw, 14.9vw);
     }
     &__header {
+        /* Footer Block - Header Element */
         @include tablet {
             display: flex;
             height: 15vw;
@@ -336,6 +380,7 @@ a {
         }
     }
     &__header-left {
+        /* Footer Block - Header Left Element */
         width: 100%;
         @include tablet {
             display: flex;
@@ -344,13 +389,13 @@ a {
             width: 70%;
         }
         &-GIT {
+            /* Footer Block - Header Left GIT Element */
             @include tablap-h1;
             font-weight: 700;
             color: $color-text-offset;
-            padding-top: 14%;
-            padding-bottom: 5%;
+            @include padding-tb(14%, 5%);
             @include tablet {
-                width: 65%;
+                width: 60%;
                 padding-top: 10%;
             }
             @include desktop {
@@ -360,14 +405,18 @@ a {
             }
         }
         &-icons {
+            /* Footer Block - Header Left Icons Element */
             width: 65%;
+            padding-left: 2%;
             @include tablet {
                 width: 50%;
+                padding-left: 0;
             }
             @include desktop {
-                padding-bottom: 8%;
+                height: 9.25vw;
             }
             &--icon {
+                /* Footer Block - Header Left Icons Element - Icon Modifier */
                 padding-right: 18%;
                 @include tablet {
                     padding-top: 12%;
@@ -380,6 +429,7 @@ a {
         }
     }
     &__header-right {
+        /* Footer Block - Header Right Element */
         display: none;
         @include tablet {
             display: flex;
@@ -387,67 +437,88 @@ a {
             align-items: center;
             width: 30%;
             padding-top: 3%;
-        @include desktop {
-            padding-top: 0;
-            padding-bottom: 2%;
-        }
-        }
-        &--logo {
-            }
-    }
-    &__body {
-        @include tablet {
-            display: flex;
-            align-content: center;
-            align-items: center;
-        }
-    }
-    &__body-item {
-        color: $color-text-offset;
-        width: 100%;
-        margin: 0;
-        @include tablet {
-            padding-right: 5%;
         }
         @include desktop {
-            width: 30%;
-            padding-right: 2%;
-        }
-        &--h2 {
-            @include mobile-h2;
-            padding-top: 8%;
-        }
-        &--h2-2 {
-            @extend .footer__body-item--h2;
-            padding-top: 0;
-            padding-bottom: 5%;
-        }
-        &--p {
-            @include mobile-p;
-        }
-        &--p-2 {
-            @extend .footer__body-item--p;
-            padding-top: 8%;
+            @include padding-tb(0, 2%);
         }
     }
-    &__copyright {
-        color: $color-text-offset;
-        width: 70%;
-        margin: 0;
-        &--p {
-            @include mobile-p;
-            padding-top: 20%;
-            padding-bottom: 20%;
-            @include tablet {
-                padding-top: 10%;
-                padding-bottom: 10%;    
-            }
+}
+
+.addresses {
+    /* Addresses Block */
+    @include tablet {
+        display: flex;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+.address {
+    /* Address Block */
+    color: $color-text-offset;
+    width: 100%;
+    margin: 0;
+    @include tablet {
+        width: 85%;
+        padding-right: 3%;
+    }
+    @include desktop {
+        width: 25%;
+        padding-right: 0;
+    }
+    &__name {
+        /* Address Block - Name Element */
+        @include mobile-h2(500);
+        padding-top: 8%;
+        @include tablet {
+            @include tablap-h3();
         }
-        &--cr {
-            @include mobile-p;
-            &:after {
-                content: $copyright;
-            }
+        @include desktop {
+            @include mobile-h4-list-contact(500);
+            padding-top: 0;
+        }
+    }
+    &__name2 {
+        /* Address Block - Name2 Element */
+        @extend .address__name;
+        @include padding-tb(0, 5%);
+    }
+    &__street-city-state-zip {
+        /* Address Block - City-State-Zip Element */
+        color: $color-text-label-style;
+        @include mobile-p;
+        @include tablet {
+            @include mobile-h4-list-contact();
+        }
+        @include desktop {
+            @include tablap-h5-label;
+        }
+    }
+    &__email {
+        /* Address Block - Email Element */
+        @extend .address__street-city-state-zip;
+        padding-top: 8%;
+    }
+}
+
+.copyright {
+    /* Copyright Block */
+    color: $color-text-label-style;
+    width: 65%;
+    margin: 0;
+    &__text {
+        /* Copyright Block - Text Element */
+        @include tablap-h5-label;
+        @include padding-tb(15%, 20%);
+        @include tablet {
+            @include padding-tb(6%, 10%);
+        }
+    }
+    &__cr-symbol {
+        /* Copyright Block - Copyright Symbol Element */
+        @include mobile-p;
+        &:after {
+            content: $copyright;
         }
     }
 }

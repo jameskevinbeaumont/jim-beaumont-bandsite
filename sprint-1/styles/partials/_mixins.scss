@@ -22,6 +22,16 @@ $desktop-breakpoint: 1200px;
     align-items: center;
   }
 
+  @mixin padding-lr ($left, $right) {
+    padding-left: $left;
+    padding-right: $right;
+  }
+
+  @mixin padding-tb ($top, $bottom) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+  }
+
   // Font based Mixins
   @mixin mobile-h1() {
     font-size: $m-h1-header;
@@ -29,10 +39,10 @@ $desktop-breakpoint: 1200px;
     font-weight: bold;
   }
 
-  @mixin mobile-h2() {
+  @mixin mobile-h2($font-weight:bold) {
     font-size: $m-h2-subheader;
     line-height: $m-h2-subheader-lh;
-    font-weight: bold;
+    font-weight: $font-weight;
   }
 
   @mixin mobile-p() {
@@ -40,7 +50,7 @@ $desktop-breakpoint: 1200px;
     line-height: $m-h4-p-lh;
   }
 
-  @mixin mobile-h4-list-contact() {
+  @mixin mobile-h4-list-contact($font-weight:normal) {
     font-size: $m-h4-list-contact;
     line-height: $m-h4-list-contact-lh;
   }
@@ -65,7 +75,7 @@ $desktop-breakpoint: 1200px;
     line-height: $dt-h2-header-lh;
   }
 
-  @mixin tablap-h3 {
+  @mixin tablap-h3($font-weight:500) {
     font-size: $dt-h3-Subheader;
     line-height: $dt-h3-Subheader-lh;
   }
@@ -73,4 +83,9 @@ $desktop-breakpoint: 1200px;
   @mixin tablap-p-comments {
     font-size: $dt-h4-p-comments;
     line-height: $dt-h4-p-comments-lh;
+  }
+
+  @mixin tablap-h5-label() {
+    font-size: $dt-h5-label;
+    line-height: $dt-h5-label-lh;
   }
