@@ -509,17 +509,24 @@ a:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 60vw;
+  height: 140vw;
   width: 100%;
-  background-image: url("../assets/images/Hero_Woman.jpg");
+  background-image: url("../assets/images/Hero_Woman_Medium.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 @media screen and (min-width: 768px) {
   .hero {
+    height: 80vw;
     left: 0;
     padding: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    height: 56vw;
   }
 }
 
@@ -537,36 +544,39 @@ a:hover {
 .hero__text, .hero__album-text {
   /* Hero Block - Text Element */
   position: absolute;
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
   font-weight: bold;
   color: #FFFFFF;
-  width: 85%;
-  padding-right: 15%;
+  width: 95%;
+  padding-right: 5%;
   left: 5%;
+  top: 18%;
 }
 
 @media screen and (min-width: 768px) {
   .hero__text, .hero__album-text {
     font-size: 60px;
     line-height: 68px;
-    width: 92%;
+    line-height: 82px;
+    width: 80%;
     left: 3%;
+    top: 19%;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .hero__text, .hero__album-text {
-    width: 75%;
+    width: 58%;
     padding-left: 12.5vw;
+    top: 29%;
     left: 0;
   }
 }
 
 .hero__album-text {
   top: 0;
-  padding-top: 6%;
+  padding-top: 10%;
   font-size: 14px;
   line-height: 22px;
   font-weight: 500;
@@ -583,7 +593,7 @@ a:hover {
 
 @media screen and (min-width: 1200px) {
   .hero__album-text {
-    padding-top: 16%;
+    padding-top: 12%;
   }
 }
 
@@ -602,6 +612,38 @@ a:hover {
     padding-left: 12.5vw;
     left: 0;
   }
+}
+
+.song {
+  position: relative;
+  width: 90%;
+  height: 0;
+  top: 30%;
+  padding-bottom: 30%;
+}
+
+@media screen and (min-width: 768px) {
+  .song {
+    width: 56%;
+    top: 26%;
+    left: -19%;
+    padding-bottom: 17%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .song {
+    width: 35%;
+    top: -3%;
+    left: 18%;
+    padding-bottom: 12%;
+  }
+}
+
+.song iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .shows {
