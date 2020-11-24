@@ -5,6 +5,12 @@
 * {
     box-sizing: border-box;
 }
+
+.main {
+    /* Main Block */
+    background-color: $color-background;
+}
+
 .body {
     /* Body Block */
     font-family: $font-family;
@@ -72,9 +78,11 @@ a {
         margin-top: 8px;
         width: 100%;
         @include tablet {
-            width: 20%;
-            margin-top: 12px;
+            width: 30%;
             align-items: flex-start; 
+        }
+        @include desktop {
+            width: 20%;
         }
     }
     &__nav-list-item {
@@ -84,30 +92,188 @@ a {
         width: 50%;
         padding-bottom: 5.5px;
         @include tablet {
-            width: 70%;
-            @include padding-tb(37.859px, 20.5px);
-        }
-        &--shows {
-            /* Header Block - Navigation List Item - Shows Modifier */
-            @extend .navbar__nav-list-item;
-            @include tablet {
-                padding-left: 40%;
-            }
-            @include desktop {
-                padding-left: 6%;
-            }
+            width: 50%;
+            @include padding-tb(40.859px, 0px);
         }
         &--underline {
-            /* Header Block - Navigation List Item - Underline Modifier */
             @extend .navbar__nav-list-item;
             border-bottom: 4px solid $color-text-field-border;
             @include tablet {
-                @include padding-lr(5%, 5%);
-            }
-            @include desktop {
-                width: 7.5vw;
-                @include padding-lr(1%, 1%);
+                border-bottom: none;
+                &:after {
+                    content: "";
+                    display: block;
+                    margin: 0 auto;
+                    width: 75%;
+                    padding-top: 22px;
+                    border-bottom: 4px solid $color-text-field-border;
+                }    
             }
         }
-    } 
+    }
+}
+
+.footer {
+    /* Footer Block */
+    display: flex;
+    flex-direction: column;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: $color-nav-bg-fill;
+    @include desktop {
+        // @include padding-lr(14.2vw, 14.9vw);
+        @include padding-lr(12.5vw, 14.9vw);
+    }
+    &__header {
+        /* Footer Block - Header Element */
+        @include tablet {
+            display: flex;
+            height: 15vw;
+        }
+        @include desktop {
+            height: 10vw;
+        }
+    }
+    &__header-left {
+        /* Footer Block - Header Left Element */
+        width: 100%;
+        @include tablet {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 70%;
+        }
+        &-GIT {
+            /* Footer Block - Header Left GIT Element */
+            @include tablap-h1;
+            font-weight: 700;
+            color: $color-text-offset;
+            @include padding-tb(14%, 5%);
+            @include tablet {
+                width: 60%;
+                padding-top: 10%;
+            }
+            @include desktop {
+                @include tablap-h2;
+                width: 35%;
+                padding-top: 3%;
+            }
+        }
+        &-icons {
+            /* Footer Block - Header Left Icons Element */
+            width: 65%;
+            padding-left: 2%;
+            @include tablet {
+                width: 50%;
+                padding-left: 0;
+            }
+            @include desktop {
+                height: 9.25vw;
+            }
+            &--icon {
+                /* Footer Block - Header Left Icons Element - Icon Modifier */
+                padding-right: 18%;
+                @include tablet {
+                    padding-top: 12%;
+                    padding-right: 15%;
+                }
+                @include desktop {
+                    padding-right: 8%;
+                }
+             }     
+        }
+    }
+    &__header-right {
+        /* Footer Block - Header Right Element */
+        display: none;
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 30%;
+            padding-top: 3%;
+        }
+        @include desktop {
+            @include padding-tb(0, 2%);
+        }
+    }
+}
+
+.addresses {
+    /* Addresses Block */
+    @include tablet {
+        display: flex;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+.address {
+    /* Address Block */
+    color: $color-text-offset;
+    width: 100%;
+    margin: 0;
+    @include tablet {
+        width: 85%;
+        padding-right: 3%;
+    }
+    @include desktop {
+        width: 25%;
+        padding-right: 0;
+    }
+    &__name {
+        /* Address Block - Name Element */
+        @include mobile-h2(500);
+        padding-top: 8%;
+        @include tablet {
+            @include tablap-h3();
+        }
+        @include desktop {
+            @include mobile-h4-list-contact(500);
+            padding-top: 0;
+        }
+    }
+    &__name2 {
+        /* Address Block - Name2 Element */
+        @extend .address__name;
+        @include padding-tb(0, 5%);
+    }
+    &__street-city-state-zip {
+        /* Address Block - City-State-Zip Element */
+        color: $color-text-label-style;
+        @include mobile-p;
+        @include tablet {
+            @include mobile-h4-list-contact();
+        }
+        @include desktop {
+            @include tablap-h5-label;
+        }
+    }
+    &__email {
+        /* Address Block - Email Element */
+        @extend .address__street-city-state-zip;
+        padding-top: 8%;
+    }
+}
+
+.copyright {
+    /* Copyright Block */
+    color: $color-text-label-style;
+    width: 65%;
+    margin: 0;
+    &__text {
+        /* Copyright Block - Text Element */
+        @include tablap-h5-label;
+        @include padding-tb(15%, 20%);
+        @include tablet {
+            @include padding-tb(6%, 10%);
+        }
+    }
+    &__cr-symbol {
+        /* Copyright Block - Copyright Symbol Element */
+        @include mobile-p;
+        &:after {
+            content: $copyright;
+        }
+    }
 }

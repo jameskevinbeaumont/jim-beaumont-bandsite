@@ -16,18 +16,22 @@ $desktop-breakpoint: 1200px;
   }
 
   // General Helper Mixins
+  @mixin hero-background($url) {
+    background-image: url($url);
+  }
+
   @mixin flex-center() {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  @mixin padding-lr ($left, $right) {
+  @mixin padding-lr($left, $right) {
     padding-left: $left;
     padding-right: $right;
   }
 
-  @mixin padding-tb ($top, $bottom) {
+  @mixin padding-tb($top, $bottom) {
     padding-top: $top;
     padding-bottom: $bottom;
   }
@@ -53,6 +57,7 @@ $desktop-breakpoint: 1200px;
   @mixin mobile-h4-list-contact($font-weight:normal) {
     font-size: $m-h4-list-contact;
     line-height: $m-h4-list-contact-lh;
+    font-weight: $font-weight;
   }
 
   @mixin mobile-h5-label() {
@@ -65,22 +70,24 @@ $desktop-breakpoint: 1200px;
     line-height: $dt-h1-hero-header-lh;
   }
 
-  @mixin tablap-h1 {
+  @mixin tablap-h1() {
     font-size: $dt-h1-header;
     line-height: $dt-h1-header-lh;
   }
 
-  @mixin tablap-h2 {
+  @mixin tablap-h2($font-weight:500) {
     font-size: $dt-h2-header;
     line-height: $dt-h2-header-lh;
+    font-weight: $font-weight;
   }
 
   @mixin tablap-h3($font-weight:500) {
     font-size: $dt-h3-Subheader;
     line-height: $dt-h3-Subheader-lh;
+    font-weight: $font-weight;
   }
 
-  @mixin tablap-p-comments {
+  @mixin tablap-p-comments() {
     font-size: $dt-h4-p-comments;
     line-height: $dt-h4-p-comments-lh;
   }

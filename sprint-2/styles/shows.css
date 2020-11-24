@@ -511,13 +511,14 @@ a:hover {
           align-items: center;
   height: 60vw;
   width: 100%;
-  background-image: url("../assets/images/Hero_Festival_Medium.jpg");
+  background-image: url("../assets/images/Hero_Woman.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 @media screen and (min-width: 768px) {
   .hero {
+    left: 0;
     padding: 0;
   }
 }
@@ -533,7 +534,7 @@ a:hover {
   background-color: rgba(50, 50, 50, 0.5);
 }
 
-.hero__text {
+.hero__text, .hero__album-text {
   /* Hero Block - Text Element */
   position: absolute;
   font-size: 24px;
@@ -547,7 +548,7 @@ a:hover {
 }
 
 @media screen and (min-width: 768px) {
-  .hero__text {
+  .hero__text, .hero__album-text {
     font-size: 60px;
     line-height: 68px;
     width: 92%;
@@ -556,33 +557,55 @@ a:hover {
 }
 
 @media screen and (min-width: 1200px) {
-  .hero__text {
-    width: 70%;
+  .hero__text, .hero__album-text {
+    width: 75%;
     padding-left: 12.5vw;
     left: 0;
   }
 }
 
-.hero__spec-last-name {
-  /* Hero Block - Special Last Name Element */
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: bold;
+.hero__album-text {
+  top: 0;
+  padding-top: 6%;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
 }
 
 @media screen and (min-width: 768px) {
-  .hero__spec-last-name {
-    font-size: 60px;
-    line-height: 68px;
+  .hero__album-text {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    padding-top: 9%;
   }
 }
 
-.hero__spec-last-name:after {
-  content: "Augé";
+@media screen and (min-width: 1200px) {
+  .hero__album-text {
+    padding-top: 16%;
+  }
 }
 
-.about {
-  /* About Block */
+@media screen and (min-width: 768px) {
+  .hero {
+    font-size: 60px;
+    line-height: 68px;
+    width: 100%;
+    left: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero {
+    width: 100%;
+    padding-left: 12.5vw;
+    left: 0;
+  }
+}
+
+.shows {
+  /* Shows Block */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -601,27 +624,35 @@ a:hover {
 }
 
 @media screen and (min-width: 768px) {
-  .about {
-    padding-left: 3.125%;
-    padding-right: 3.125%;
+  .shows {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: start;
+        align-content: flex-start;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .about {
+  .shows {
     padding-left: 12.5vw;
     padding-right: 12.5vw;
   }
 }
 
-.about__common, .about__title, .photo-gallery__title, .comments__title, .about__subtitle, .about__names, .about__quote-name {
-  /* About Block - Common Element */
+.shows__common, .shows__title {
+  /* Shows Block - Common Element */
   color: #323232;
   width: 100%;
 }
 
-.about__title, .photo-gallery__title, .comments__title {
-  /* About Block - Title Element */
+.shows__title {
+  /* Shows Block - Title Element */
   font-size: 24px;
   line-height: 32px;
   font-weight: bold;
@@ -630,258 +661,7 @@ a:hover {
 }
 
 @media screen and (min-width: 768px) {
-  .about__title, .photo-gallery__title, .comments__title {
-    font-size: 36px;
-    line-height: 44px;
-    padding-top: 7%;
-    padding-bottom: 4%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .about__title, .photo-gallery__title, .comments__title {
-    padding-top: 5%;
-    padding-bottom: 5%;
-  }
-}
-
-.about__image {
-  /* About Block - Image Element */
-  width: 100%;
-}
-
-@media screen and (min-width: 1200px) {
-  .about__image {
-    padding-left: 7.8vw;
-    padding-right: 7.8vw;
-  }
-}
-
-.about__subtitle, .about__names {
-  /* About Block - Subtitle Element */
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 600;
-  padding-top: 9%;
-}
-
-@media screen and (min-width: 768px) {
-  .about__subtitle, .about__names {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 500;
-    padding-top: 7%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .about__subtitle, .about__names {
-    padding-left: 7.8vw;
-    padding-right: 7.8vw;
-  }
-}
-
-.about__quote-name {
-  /* About Block - Quote Name Element */
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 600;
-  padding-top: 11%;
-}
-
-@media screen and (min-width: 768px) {
-  .about__quote-name {
-    font-size: 16px;
-    line-height: 24px;
-    font-weight: 400;
-    padding-top: 4%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .about__quote-name {
-    padding-left: 7.8vw;
-    padding-right: 7.8vw;
-  }
-}
-
-.about__names {
-  /* About Block - Names Element */
-  padding-top: 14%;
-}
-
-@media screen and (min-width: 768px) {
-  .about__names {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 500;
-    padding-top: 7%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .about__names {
-    padding-top: 6%;
-  }
-}
-
-.about__names:after {
-  content: '\00E9';
-}
-
-.about-detail {
-  /* About Detail Block */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-@media screen and (min-width: 768px) {
-  .about-detail {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    padding-left: 3.125%;
-    padding-right: 3.125%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .about-detail {
-    padding-left: 20.4vw;
-    padding-right: 20.4vw;
-  }
-}
-
-.about-detail__common, .about-detail__paragraph {
-  /* About Detail Block - Common Element */
-  color: #323232;
-  width: 100%;
-}
-
-.about-detail__paragraph {
-  /* About Detail Block - Paragraph Element */
-  font-size: 12px;
-  line-height: 20px;
-  padding-top: 8%;
-}
-
-@media screen and (min-width: 768px) {
-  .about-detail__paragraph {
-    font-size: 14px;
-    line-height: 22px;
-    padding-top: 3%;
-    padding-bottom: 5%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .about-detail__paragraph {
-    padding-bottom: 7%;
-  }
-}
-
-.about-detail__paragraph--col-divider {
-  /* About Detail Block - Paragraph Element - Column Divider Modifier */
-  display: none;
-}
-
-@media screen and (min-width: 768px) {
-  .about-detail__paragraph--col-divider {
-    display: block;
-    padding-left: 3.25%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .about-detail__paragraph--col-divider {
-    padding-left: 5%;
-  }
-}
-
-.about-detail__paragraph--end {
-  /* About Detail Block - Paragraph Element - End Modifier */
-  padding-bottom: 14%;
-}
-
-.about-detail__spec-last-name {
-  /* About Detail Block - Special Last Name Element */
-  font-size: 12px;
-  line-height: 20px;
-}
-
-@media screen and (min-width: 768px) {
-  .about-detail__spec-last-name {
-    font-size: 14px;
-    line-height: 22px;
-  }
-}
-
-.about-detail__spec-last-name:after {
-  content: "Augé";
-}
-
-.photo-gallery {
-  /* Photo Gallery Block */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-left: 5%;
-  padding-right: 5%;
-  background-color: #FAFAFA;
-}
-
-@media screen and (min-width: 768px) {
-  .photo-gallery {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-line-pack: start;
-        align-content: flex-start;
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .photo-gallery {
-    padding-left: 12.5vw;
-    padding-right: 12.5vw;
-  }
-}
-
-.photo-gallery__title {
-  /* Photo Gallery Block - Title Element */
-}
-
-@media screen and (min-width: 768px) {
-  .photo-gallery__title {
+  .shows__title {
     font-size: 36px;
     line-height: 44px;
     padding: 5% 3.125% 7% 3.125%;
@@ -889,101 +669,9 @@ a:hover {
 }
 
 @media screen and (min-width: 1200px) {
-  .photo-gallery__title {
-    padding-left: 1.75vw;
-    padding-right: 1.75vw;
-  }
-}
-
-.photo {
-  /* Photo Block */
-}
-
-.photo__image {
-  /* Photo Block - Image Element */
-  width: 100%;
-  padding-bottom: 6%;
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
-}
-
-.photo__image:hover {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
-}
-
-@media screen and (min-width: 768px) {
-  .photo__image {
-    width: 32%;
-    padding-left: 3.25%;
-    padding-bottom: 3.25%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .photo__image {
-    padding-left: 1.67vw;
-    padding-bottom: 1.67vw;
-  }
-}
-
-.comments {
-  /* Comments Block */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-@media screen and (min-width: 768px) {
-  .comments {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-line-pack: start;
-        align-content: flex-start;
+  .shows__title {
     padding-left: 0;
     padding-right: 0;
   }
 }
-
-@media screen and (min-width: 1200px) {
-  .comments {
-    padding-left: 12.5vw;
-    padding-right: 12.5vw;
-  }
-}
-
-.comments__title {
-  /* Comments Block - Title Element */
-}
-
-@media screen and (min-width: 768px) {
-  .comments__title {
-    font-size: 36px;
-    line-height: 44px;
-    padding: 5% 3.125% 7% 3.125%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .comments__title {
-    padding-left: 1.75vw;
-    padding-right: 1.75vw;
-  }
-}
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=shows.css.map */

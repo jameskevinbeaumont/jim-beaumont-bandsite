@@ -1,17 +1,12 @@
 @import "./partials/common";
 
-.main {
-    /* Main Block */
-    background-color: $color-background;
-}
-
 .hero {
     /* Hero Block */
     position: relative;
     @include flex-center;
     height: 60vw;
     width: 100%;
-    background-image: url('../assets/images/Hero_Festival_Medium.jpg');
+    @include hero-background('../assets/images/Hero_Festival_Medium.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     @include tablet {
@@ -247,166 +242,29 @@
     }
 }
 
-.footer {
-    /* Footer Block */
-    display: flex;
+.comments {
+    /* Comments Block */
+    @include flex-center;
     flex-direction: column;
-    padding-left: 3%;
-    padding-right: 3%;
-    background-color: $color-nav-bg-fill;
+    @include padding-lr(5%, 5%);
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        @include padding-lr(0, 0);
+    }
     @include desktop {
-        @include padding-lr(14.2vw, 14.9vw);
+        @include padding-lr(12.5vw, 12.5vw);
     }
-    &__header {
-        /* Footer Block - Header Element */
+    &__title {
+        /* Comments Block - Title Element */
+        @extend .about__title;
         @include tablet {
-            display: flex;
-            height: 15vw;
-        }
-        @include desktop {
-            height: 10vw;
-        }
-    }
-    &__header-left {
-        /* Footer Block - Header Left Element */
-        width: 100%;
-        @include tablet {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            width: 70%;
-        }
-        &-GIT {
-            /* Footer Block - Header Left GIT Element */
             @include tablap-h1;
-            font-weight: 700;
-            color: $color-text-offset;
-            @include padding-tb(14%, 5%);
-            @include tablet {
-                width: 60%;
-                padding-top: 10%;
-            }
-            @include desktop {
-                @include tablap-h2;
-                width: 35%;
-                padding-top: 3%;
-            }
-        }
-        &-icons {
-            /* Footer Block - Header Left Icons Element */
-            width: 65%;
-            padding-left: 2%;
-            @include tablet {
-                width: 50%;
-                padding-left: 0;
-            }
-            @include desktop {
-                height: 9.25vw;
-            }
-            &--icon {
-                /* Footer Block - Header Left Icons Element - Icon Modifier */
-                padding-right: 18%;
-                @include tablet {
-                    padding-top: 12%;
-                    padding-right: 15%;
-                }
-                @include desktop {
-                    padding-right: 8%;
-                }
-             }     
-        }
-    }
-    &__header-right {
-        /* Footer Block - Header Right Element */
-        display: none;
-        @include tablet {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            width: 30%;
-            padding-top: 3%;
+            padding: 5% 3.125% 7% 3.125%;
         }
         @include desktop {
-            @include padding-tb(0, 2%);
-        }
-    }
-}
-
-.addresses {
-    /* Addresses Block */
-    @include tablet {
-        display: flex;
-        align-content: center;
-        align-items: center;
-    }
-}
-
-.address {
-    /* Address Block */
-    color: $color-text-offset;
-    width: 100%;
-    margin: 0;
-    @include tablet {
-        width: 85%;
-        padding-right: 3%;
-    }
-    @include desktop {
-        width: 25%;
-        padding-right: 0;
-    }
-    &__name {
-        /* Address Block - Name Element */
-        @include mobile-h2(500);
-        padding-top: 8%;
-        @include tablet {
-            @include tablap-h3();
-        }
-        @include desktop {
-            @include mobile-h4-list-contact(500);
-            padding-top: 0;
-        }
-    }
-    &__name2 {
-        /* Address Block - Name2 Element */
-        @extend .address__name;
-        @include padding-tb(0, 5%);
-    }
-    &__street-city-state-zip {
-        /* Address Block - City-State-Zip Element */
-        color: $color-text-label-style;
-        @include mobile-p;
-        @include tablet {
-            @include mobile-h4-list-contact();
-        }
-        @include desktop {
-            @include tablap-h5-label;
-        }
-    }
-    &__email {
-        /* Address Block - Email Element */
-        @extend .address__street-city-state-zip;
-        padding-top: 8%;
-    }
-}
-
-.copyright {
-    /* Copyright Block */
-    color: $color-text-label-style;
-    width: 65%;
-    margin: 0;
-    &__text {
-        /* Copyright Block - Text Element */
-        @include tablap-h5-label;
-        @include padding-tb(15%, 20%);
-        @include tablet {
-            @include padding-tb(6%, 10%);
-        }
-    }
-    &__cr-symbol {
-        /* Copyright Block - Copyright Symbol Element */
-        @include mobile-p;
-        &:after {
-            content: $copyright;
+            @include padding-lr(1.75vw, 1.75vw);
         }
     }
 }
