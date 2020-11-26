@@ -104,6 +104,10 @@ a:hover {
   background-color: #323232;
 }
 
+.header__h1 {
+  display: none;
+}
+
 .navbar {
   /* Navigation Bar */
   display: -webkit-box;
@@ -226,9 +230,16 @@ a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-top: 10%;
   padding-left: 3%;
   padding-right: 3%;
   background-color: #323232;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    margin-top: 4%;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -440,7 +451,7 @@ a:hover {
 
 .address__street-city-state-zip, .address__email {
   /* Address Block - City-State-Zip Element */
-  color: #AFAFAF;
+  color: #FFFFFF;
   font-size: 13px;
   line-height: 18px;
 }
@@ -462,12 +473,13 @@ a:hover {
 
 .address__email {
   /* Address Block - Email Element */
+  color: #FFFFFF;
   padding-top: 8%;
 }
 
 .copyright {
   /* Copyright Block */
-  color: #AFAFAF;
+  color: #FFFFFF;
   width: 65%;
   margin: 0;
 }
@@ -776,6 +788,7 @@ a:hover {
   /* About Detail Block - Paragraph Element */
   font-size: 12px;
   line-height: 20px;
+  color: #323232;
   padding-top: 8%;
 }
 
@@ -821,6 +834,7 @@ a:hover {
   /* About Detail Block - Special Last Name Element */
   font-size: 12px;
   line-height: 20px;
+  color: #323232;
 }
 
 @media screen and (min-width: 768px) {

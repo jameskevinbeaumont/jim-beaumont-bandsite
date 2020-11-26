@@ -45,6 +45,9 @@ a {
     margin: 0;
     width: 100%;
     background-color: $color-nav-bg-fill;
+    &__h1 {
+        display: none;
+    }
 }
 .navbar {
     /* Navigation Bar */
@@ -117,11 +120,14 @@ a {
     /* Footer Block */
     display: flex;
     flex-direction: column;
+    margin-top: 10%;
     padding-left: 3%;
     padding-right: 3%;
     background-color: $color-nav-bg-fill;
+    @include tablet {
+        margin-top: 4%;
+    }
     @include desktop {
-        // @include padding-lr(14.2vw, 14.9vw);
         @include padding-lr(12.5vw, 14.9vw);
     }
     &__header {
@@ -240,7 +246,7 @@ a {
     }
     &__street-city-state-zip {
         /* Address Block - City-State-Zip Element */
-        color: $color-text-label-style;
+        color: $color-text-offset;
         @include mobile-p;
         @include tablet {
             @include mobile-h4-list-contact();
@@ -252,13 +258,14 @@ a {
     &__email {
         /* Address Block - Email Element */
         @extend .address__street-city-state-zip;
+        color: $color-text-offset;
         padding-top: 8%;
     }
 }
 
 .copyright {
     /* Copyright Block */
-    color: $color-text-label-style;
+    color: $color-text-offset;
     width: 65%;
     margin: 0;
     &__text {

@@ -37,10 +37,10 @@ $desktop-breakpoint: 1200px;
   }
 
   // Font based Mixins
-  @mixin mobile-h1() {
+  @mixin mobile-h1($font-weight:bold) {
     font-size: $m-h1-header;
     line-height: $m-h1-header-lh;
-    font-weight: bold;
+    font-weight: $font-weight;
   }
 
   @mixin mobile-h2($font-weight:bold) {
@@ -60,9 +60,10 @@ $desktop-breakpoint: 1200px;
     font-weight: $font-weight;
   }
 
-  @mixin mobile-h5-label() {
+  @mixin mobile-h5-label($color-text:$color-paragraph-text) {
     font-size: $m-h5-label;
     line-height: $m-h5-label-lh;
+    color: $color-text;
   }
 
   @mixin tablap-h1-hero () {
