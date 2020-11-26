@@ -19,8 +19,6 @@
             <ul class="navbar__nav-list">
                 <li class="navbar__nav-list-item--underline"><a class="a--select" href="#">Biography</a></li>
                 <li class="navbar__nav-list-item"><a href="./pages/shows.html">Shows</a></li>
-                <!-- <li class="navbar__nav-list-item--underline"><a class="a--select" href="#">Biography</a></li>
-                <li class="navbar__nav-list-item--regular"><a href="./pages/shows.html">Shows</a></li> -->
             </ul>
         </nav>
     </header>
@@ -82,6 +80,74 @@
         <!-- Comments Section -->
         <section class="comments">
             <p class="comments__title">Join the Conversation</p>
+            <form class="comments__form" id="comments__form" action="">
+                <div class="comments__form-image">
+                    <img class="comment-image" src="../assets/images/Mohan-muruge-sq.jpg">
+                </div>
+                <div class="comments__form-main">
+                    <label class="comments__form-label" for="fullName">NAME</label>
+                    <input 
+                        class="comments__form-input" 
+                        type="text" 
+                        name="fullName" 
+                        id="fullName">
+                    <label class="comments__form-label--comment" for="commentText">COMMENT</label>
+                    <textarea 
+                        class="comments__form-textarea" 
+                        rows="5" cols="35" 
+                        name="commentText" id="commentText"
+                        placeholder="Add a new comment"></textarea> 
+                    <button class="comments__form-button" type="submit">COMMENT</button>
+                </div>
+            </form>
+            <div class="comments__history">
+                <hr class="comment__divider">
+                <div class="comment">
+                    <div class="comment__image">
+                        <img class="comment-image">
+                    </div>
+                    <div class="comment__detail">
+                        <div class="comment__header">
+                            <p class="comment__header-name">Michael Lyons</p>
+                            <p class="comment__header-date">12/18/2018</p>
+                        </div>
+                        <div class="comment__comments">
+                            <p class="comment__comments-text">They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.</p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="comment__divider">
+                <div class="comment">
+                    <div class="comment__image">
+                        <img class="comment-image">
+                    </div>
+                    <div class="comment__detail">
+                        <div class="comment__header">
+                            <p class="comment__header-name">Gary Wong</p>
+                            <p class="comment__header-date">12/12/2018</p>
+                        </div>
+                        <div class="comment__comments">
+                            <p class="comment__comments-text">Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!</p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="comment__divider">
+                <div class="comment">
+                    <div class="comment__image">
+                        <img class="comment-image">
+                    </div>
+                    <div class="comment__detail">
+                        <div class="comment__header">
+                            <p class="comment__header-name">Theodore Duncan</p>
+                            <p class="comment__header-date">11/15/2018</p>
+                        </div>
+                        <div class="comment__comments">
+                            <p class="comment__comments-text">How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!</p>
+                        </div>
+                    </div>
+                </div>
+                <hr class="comment__divider">
+            </div>
         </section>
         <!-- Footer Section -->
         <section class="footer">
@@ -129,6 +195,7 @@
             </div>
         </section>
     </main>
-
+    <!-- scripts -->
+    <script type="text/javascript" src="../scripts/biography.js" defer></script>
 </body>
 </html>
