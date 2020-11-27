@@ -104,10 +104,6 @@ a:hover {
   background-color: #323232;
 }
 
-.header__h1 {
-  display: none;
-}
-
 .navbar {
   /* Navigation Bar */
   display: -webkit-box;
@@ -238,7 +234,7 @@ a:hover {
 
 @media screen and (min-width: 768px) {
   .footer {
-    margin-top: 4%;
+    margin-top: 3vh;
   }
 }
 
@@ -637,23 +633,23 @@ a:hover {
   font-size: 24px;
   line-height: 32px;
   font-weight: bold;
-  padding-top: 11%;
-  padding-bottom: 8%;
+  padding-top: 1.5vh;
+  padding-bottom: 0.25vh;
 }
 
 @media screen and (min-width: 768px) {
   .about__title, .photo-gallery__title {
     font-size: 36px;
     line-height: 44px;
-    padding-top: 7%;
-    padding-bottom: 4%;
+    padding-top: 1.5vh;
+    padding-bottom: 0.5vh;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .about__title, .photo-gallery__title {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
   }
 }
 
@@ -674,7 +670,7 @@ a:hover {
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
-  padding-top: 9%;
+  padding-top: 1vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -682,7 +678,7 @@ a:hover {
     font-size: 24px;
     line-height: 32px;
     font-weight: 500;
-    padding-top: 7%;
+    padding-top: 2.5vh;
   }
 }
 
@@ -698,7 +694,7 @@ a:hover {
   font-size: 13px;
   line-height: 18px;
   font-weight: 600;
-  padding-top: 11%;
+  padding-top: .25vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -706,7 +702,6 @@ a:hover {
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
-    padding-top: 4%;
   }
 }
 
@@ -719,7 +714,7 @@ a:hover {
 
 .about__names {
   /* About Block - Names Element */
-  padding-top: 14%;
+  padding-top: .25vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -727,18 +722,7 @@ a:hover {
     font-size: 24px;
     line-height: 32px;
     font-weight: 500;
-    padding-top: 7%;
   }
-}
-
-@media screen and (min-width: 1200px) {
-  .about__names {
-    padding-top: 6%;
-  }
-}
-
-.about__names:after {
-  content: '\00E9';
 }
 
 .about-detail {
@@ -789,27 +773,26 @@ a:hover {
   font-size: 12px;
   line-height: 20px;
   color: #323232;
-  padding-top: 8%;
+  padding-top: .5vh;
 }
 
 @media screen and (min-width: 768px) {
   .about-detail__paragraph {
     font-size: 14px;
     line-height: 22px;
-    padding-top: 3%;
-    padding-bottom: 5%;
+    padding-bottom: 5vh;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .about-detail__paragraph {
-    padding-bottom: 7%;
+    padding-bottom: 3.5vh;
   }
 }
 
 .about-detail__paragraph--col-divider {
   /* About Detail Block - Paragraph Element - Column Divider Modifier */
-  display: none;
+  padding-top: 1.25vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -827,25 +810,7 @@ a:hover {
 
 .about-detail__paragraph--end {
   /* About Detail Block - Paragraph Element - End Modifier */
-  padding-bottom: 14%;
-}
-
-.about-detail__spec-last-name {
-  /* About Detail Block - Special Last Name Element */
-  font-size: 12px;
-  line-height: 20px;
-  color: #323232;
-}
-
-@media screen and (min-width: 768px) {
-  .about-detail__spec-last-name {
-    font-size: 14px;
-    line-height: 22px;
-  }
-}
-
-.about-detail__spec-last-name:after {
-  content: "Augé";
+  padding-bottom: 5vh;
 }
 
 .photo-gallery {
@@ -898,7 +863,7 @@ a:hover {
   .photo-gallery__title {
     font-size: 36px;
     line-height: 44px;
-    padding: 5% 3.125% 7% 3.125%;
+    padding: 2vh 3.125% 3vh 3.125%;
   }
 }
 
@@ -916,7 +881,7 @@ a:hover {
 .photo__image {
   /* Photo Block - Image Element */
   width: 100%;
-  padding-bottom: 6%;
+  padding-bottom: 2vh;
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
 }
@@ -967,24 +932,24 @@ a:hover {
   font-weight: bold;
   color: #323232;
   width: 100%;
-  padding-top: 11%;
-  padding-bottom: 8%;
+  padding-top: 4vh;
+  padding-bottom: 3vh;
 }
 
 @media screen and (min-width: 768px) {
   .comments__title {
     font-size: 36px;
     line-height: 44px;
-    padding-top: 7%;
-    padding-bottom: 4%;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
     width: 104%;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .comments__title {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 4vh;
+    padding-bottom: 5vh;
     width: 80%;
   }
 }

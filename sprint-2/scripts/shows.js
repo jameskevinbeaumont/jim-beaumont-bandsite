@@ -32,8 +32,8 @@ let shows = [
     }  
 ]
 
-// Create show detail HTML
-const addShow = (showObj, i) => {
+// Display show detail
+const displayShow = (showObj, i) => {
     // Declare local variables
     let ref;
     // Determine if we already have shows listed
@@ -103,5 +103,5 @@ const insertAfter = (el, referenceNode) => {
 // Iterate shows object and build HTML for show display
 shows.forEach(function(show, i) {
     // console.log(i, show.showDate, show.showVenue, show.showLocation);
-    addShow(show, i);
+    displayShow(show, i);
 });

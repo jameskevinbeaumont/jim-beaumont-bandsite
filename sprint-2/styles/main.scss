@@ -74,13 +74,13 @@
         /* About Block - Title Element */
         @include mobile-h1;
         @extend .about__common;
-        @include padding-tb(11%, 8%);
+        @include padding-tb(1.5vh, .25vh);
         @include tablet {
             @include tablap-h1;
-            @include padding-tb(7%, 4%);
+            @include padding-tb(1.5vh, .5vh);
             }
         @include desktop {
-            @include padding-tb(5%, 5%);
+            @include padding-tb(1.5vh, 1.5vh);
         }
     }
     &__image {
@@ -94,10 +94,10 @@
         /* About Block - Subtitle Element */
         @include mobile-h2(600);
         @extend .about__common;
-        padding-top: 9%;
+        padding-top: 1vh;
         @include tablet {
             @include tablap-h2;
-            padding-top: 7%;
+            padding-top: 2.5vh;
         }
         @include desktop {
             @include padding-lr(7.8vw, 7.8vw);
@@ -107,10 +107,9 @@
         /* About Block - Quote Name Element */
         @include mobile-h4-list-contact(600);
         @extend .about__common;
-        padding-top: 11%;
+        padding-top: .25vh;
         @include tablet {
             @include tablap-h3(400);
-            padding-top: 4%;
         }
         @include desktop {
             @include padding-lr(7.8vw, 7.8vw);
@@ -119,16 +118,9 @@
     &__names {
         /* About Block - Names Element */
         @extend .about__subtitle;
-        padding-top: 14%;
+        padding-top: .25vh;
         @include tablet {
             @include tablap-h2;
-            padding-top: 7%;
-        }
-        @include desktop {
-            padding-top: 6%;
-        }     
-        &:after {
-            content: '\00E9';
         }
     }
 }
@@ -155,17 +147,17 @@
         /* About Detail Block - Paragraph Element */
         @include mobile-h5-label;
         @extend .about-detail__common;
-        padding-top: 8%;    
+        padding-top: .5vh;    
         @include tablet {
             @include tablap-p-comments;
-            @include padding-tb(3%, 5%);
+            padding-bottom: 5vh;
         }
         @include desktop {
-            padding-bottom: 7%;
+            padding-bottom: 3.5vh;
         }
         &--col-divider {
             /* About Detail Block - Paragraph Element - Column Divider Modifier */
-            display: none;
+            padding-top: 1.25vh;
             @include tablet {
                 display: block;
                 padding-left: 3.25%;
@@ -176,17 +168,7 @@
         }
         &--end {
             /* About Detail Block - Paragraph Element - End Modifier */
-            padding-bottom: 14%;
-        }
-    }
-    &__spec-last-name {
-        /* About Detail Block - Special Last Name Element */
-        @include mobile-h5-label;
-        @include tablet {
-            @include tablap-p-comments;
-        }
-        &:after {
-            content: $last-name;
+            padding-bottom: 5vh;
         }
     }
 }
@@ -212,7 +194,7 @@
         @extend .about__title;
         @include tablet {
             @include tablap-h1;
-            padding: 5% 3.125% 7% 3.125%;
+            padding: 2vh 3.125% 3vh 3.125%;
         }
         @include desktop {
             @include padding-lr(1.75vw, 1.75vw);
@@ -225,7 +207,7 @@
     &__image {
         /* Photo Block - Image Element */
         width: 100%;
-        padding-bottom: 6%;
+        padding-bottom: 2vh;
         filter: grayscale(1);
         &:hover {
             filter: grayscale(0);
@@ -247,37 +229,21 @@
     @include flex-center;
     flex-direction: column;
     @include padding-lr(5%, 5%);
-    // @include tablet {
-        // flex-direction: row;
-        // flex-wrap: wrap;
-        // align-content: flex-start;
-    //     @include padding-lr(0, 0);
-    // }
-    // @include desktop {
-    //     @include padding-lr(12.5vw, 12.5vw);
-    // }
     &__title {
         /* Comments Block - Title Element */
         @include mobile-h1;
         color: $color-paragraph-text;
         width: 100%;        
-        @include padding-tb(11%, 8%);
+        @include padding-tb(4vh, 3vh);
         @include tablet {
             @include tablap-h1;
-            @include padding-tb(7%, 4%);
+            @include padding-tb(5vh, 5vh);
             width: 104%;
             }
         @include desktop {
-            @include padding-tb(5%, 5%);
+            @include padding-tb(4vh, 5vh);
             width: 80%;
         }
-    //     @include tablet {
-    //         @include tablap-h1;
-    //         padding: 5% 3.125% 7% 3.125%;
-    //     }
-    //     @include desktop {
-    //         @include padding-lr(1.75vw, 1.75vw);
-    //     }
     }
     &__form {
         display: flex;
