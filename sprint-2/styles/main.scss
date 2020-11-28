@@ -74,13 +74,13 @@
         /* About Block - Title Element */
         @include mobile-h1;
         @extend .about__common;
-        @include padding-tb(1.5vh, .25vh);
+        @include padding-tb(3vh, 2vh);
         @include tablet {
             @include tablap-h1;
-            @include padding-tb(1.5vh, .5vh);
+            @include padding-tb(5vh, 3.5vh);
             }
         @include desktop {
-            @include padding-tb(1.5vh, 1.5vh);
+            @include padding-tb(3.5vh, 3.5vh);
         }
     }
     &__image {
@@ -94,33 +94,39 @@
         /* About Block - Subtitle Element */
         @include mobile-h2(600);
         @extend .about__common;
-        padding-top: 1vh;
+        padding-top: 2.5vh;
         @include tablet {
-            @include tablap-h2;
-            padding-top: 2.5vh;
+            @include tablap-h2(600);
+            padding-top: 5vh;
         }
         @include desktop {
             @include padding-lr(7.8vw, 7.8vw);
+            padding-top: 3.5vh;
         }
     }
     &__quote-name {
         /* About Block - Quote Name Element */
         @include mobile-h4-list-contact(600);
         @extend .about__common;
-        padding-top: .25vh;
+        padding-top: 3vh;
         @include tablet {
-            @include tablap-h3(400);
+            @include tablap-h3(600);
         }
         @include desktop {
             @include padding-lr(7.8vw, 7.8vw);
+            padding-top: 2vh;
         }
     }
     &__names {
         /* About Block - Names Element */
         @extend .about__subtitle;
-        padding-top: .25vh;
+        padding-top: 3.5vh;
         @include tablet {
-            @include tablap-h2;
+            @include tablap-h2(600);
+            padding-top: 5vh;
+        }
+        @include desktop {
+            padding-top: 3.5vh;
         }
     }
 }
@@ -147,12 +153,14 @@
         /* About Detail Block - Paragraph Element */
         @include mobile-h5-label;
         @extend .about-detail__common;
-        padding-top: .5vh;    
+        padding-top: 1vh;    
         @include tablet {
             @include tablap-p-comments;
+            padding-top: 2vh;
             padding-bottom: 5vh;
         }
         @include desktop {
+            padding-top: 1.5vh;
             padding-bottom: 3.5vh;
         }
         &--col-divider {
@@ -185,6 +193,7 @@
         flex-wrap: wrap;
         align-content: flex-start;
         @include padding-lr(0, 0);
+        padding-bottom: 2vh;
    }
     @include desktop {
         @include padding-lr(12.5vw, 12.5vw);
@@ -194,10 +203,11 @@
         @extend .about__title;
         @include tablet {
             @include tablap-h1;
-            padding: 2vh 3.125% 3vh 3.125%;
+            padding: 5vh 3.125% 6vh 3.125%;
         }
         @include desktop {
-            @include padding-lr(1.75vw, 1.75vw);
+            // @include padding-lr(1.75vw, 1.75vw);
+            padding: 4vh 1.75vw 4.25vw 1.25vw;
         }
     }
 }
@@ -207,19 +217,19 @@
     &__image {
         /* Photo Block - Image Element */
         width: 100%;
-        padding-bottom: 2vh;
+        padding-bottom: 1.25vh;
         filter: grayscale(1);
         &:hover {
             filter: grayscale(0);
         }
         @include tablet {
             width: 32%;
-            padding-left: 3.25%;
-            padding-bottom: 3.25%;
+            padding-left: 2.5vw;
+            padding-bottom: 2.5vw;
         }
         @include desktop {
-            padding-left: 1.67vw;
-            padding-bottom: 1.67vw;
+            padding-left: 1.25vw;
+            padding-bottom: 1.25vw;
         }
     }
 }
@@ -382,12 +392,12 @@
                 width: fit-content;
             }
         }
-        &-date {
+        &-ts {
             @include mobile-h4-list-contact(400);
-            width: 34%;
+            width: 60%;
             color: $color-text-label-style;
             text-align: right;
-            padding-left: 5%;
+            // padding-left: 5%;
             @include tablet {
                 width: fit-content;
                 padding-left: 2%;

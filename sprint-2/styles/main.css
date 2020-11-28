@@ -72,7 +72,7 @@
   width: 100%;
 }
 
-p {
+h1, h2, h3, h4, h5, p {
   margin: 0;
 }
 
@@ -211,7 +211,7 @@ a:hover {
     content: "";
     display: block;
     margin: 0 auto;
-    width: 75%;
+    width: 86px;
     padding-top: 22px;
     border-bottom: 4px solid #E1E1E1;
   }
@@ -226,7 +226,7 @@ a:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 10%;
+  margin-top: 2.5vh;
   padding-left: 3%;
   padding-right: 3%;
   background-color: #323232;
@@ -242,6 +242,7 @@ a:hover {
   .footer {
     padding-left: 12.5vw;
     padding-right: 14.9vw;
+    margin-top: 1vh;
   }
 }
 
@@ -303,9 +304,8 @@ a:hover {
 
 @media screen and (min-width: 1200px) {
   .footer__header-left-GIT {
-    font-size: 24px;
-    line-height: 32px;
-    font-weight: 500;
+    font-size: 36px;
+    line-height: 44px;
     width: 35%;
     padding-top: 3%;
   }
@@ -337,13 +337,14 @@ a:hover {
 
 @media screen and (min-width: 768px) {
   .footer__header-left-icons--icon {
-    padding-top: 12%;
+    padding-top: 3.5vh;
     padding-right: 15%;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .footer__header-left-icons--icon {
+    padding-top: 4.1vh;
     padding-right: 8%;
   }
 }
@@ -432,8 +433,8 @@ a:hover {
 
 @media screen and (min-width: 1200px) {
   .address__name, .address__name2 {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 16px;
+    line-height: 24px;
     font-weight: 500;
     padding-top: 0;
   }
@@ -450,20 +451,13 @@ a:hover {
   color: #FFFFFF;
   font-size: 13px;
   line-height: 18px;
-}
-
-@media screen and (min-width: 768px) {
-  .address__street-city-state-zip, .address__email {
-    font-size: 13px;
-    line-height: 18px;
-    font-weight: normal;
-  }
+  font-weight: normal;
 }
 
 @media screen and (min-width: 1200px) {
   .address__street-city-state-zip, .address__email {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 14px;
+    line-height: 22px;
   }
 }
 
@@ -476,33 +470,33 @@ a:hover {
 .copyright {
   /* Copyright Block */
   color: #FFFFFF;
-  width: 65%;
+  width: 70%;
   margin: 0;
 }
 
 .copyright__text {
   /* Copyright Block - Text Element */
-  font-size: 12px;
-  line-height: 20px;
-  padding-top: 15%;
-  padding-bottom: 20%;
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: normal;
+  padding-top: 4vh;
+  padding-bottom: 5vh;
 }
 
 @media screen and (min-width: 768px) {
   .copyright__text {
-    padding-top: 6%;
-    padding-bottom: 10%;
+    padding-top: 4vh;
+    padding-bottom: 5vh;
   }
 }
 
-.copyright__cr-symbol {
-  /* Copyright Block - Copyright Symbol Element */
-  font-size: 13px;
-  line-height: 18px;
-}
-
-.copyright__cr-symbol:after {
-  content: "©";
+@media screen and (min-width: 1200px) {
+  .copyright__text {
+    font-size: 14px;
+    line-height: 22px;
+    padding-top: 2vh;
+    padding-bottom: 3vh;
+  }
 }
 
 .hero {
@@ -633,23 +627,23 @@ a:hover {
   font-size: 24px;
   line-height: 32px;
   font-weight: bold;
-  padding-top: 1.5vh;
-  padding-bottom: 0.25vh;
+  padding-top: 3vh;
+  padding-bottom: 2vh;
 }
 
 @media screen and (min-width: 768px) {
   .about__title, .photo-gallery__title {
     font-size: 36px;
     line-height: 44px;
-    padding-top: 1.5vh;
-    padding-bottom: 0.5vh;
+    padding-top: 5vh;
+    padding-bottom: 3.5vh;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .about__title, .photo-gallery__title {
-    padding-top: 1.5vh;
-    padding-bottom: 1.5vh;
+    padding-top: 3.5vh;
+    padding-bottom: 3.5vh;
   }
 }
 
@@ -670,15 +664,15 @@ a:hover {
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
-  padding-top: 1vh;
+  padding-top: 2.5vh;
 }
 
 @media screen and (min-width: 768px) {
   .about__subtitle, .about__names {
     font-size: 24px;
     line-height: 32px;
-    font-weight: 500;
-    padding-top: 2.5vh;
+    font-weight: 600;
+    padding-top: 5vh;
   }
 }
 
@@ -686,6 +680,7 @@ a:hover {
   .about__subtitle, .about__names {
     padding-left: 7.8vw;
     padding-right: 7.8vw;
+    padding-top: 3.5vh;
   }
 }
 
@@ -694,14 +689,14 @@ a:hover {
   font-size: 13px;
   line-height: 18px;
   font-weight: 600;
-  padding-top: .25vh;
+  padding-top: 3vh;
 }
 
 @media screen and (min-width: 768px) {
   .about__quote-name {
     font-size: 16px;
     line-height: 24px;
-    font-weight: 400;
+    font-weight: 600;
   }
 }
 
@@ -709,19 +704,27 @@ a:hover {
   .about__quote-name {
     padding-left: 7.8vw;
     padding-right: 7.8vw;
+    padding-top: 2vh;
   }
 }
 
 .about__names {
   /* About Block - Names Element */
-  padding-top: .25vh;
+  padding-top: 3.5vh;
 }
 
 @media screen and (min-width: 768px) {
   .about__names {
     font-size: 24px;
     line-height: 32px;
-    font-weight: 500;
+    font-weight: 600;
+    padding-top: 5vh;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .about__names {
+    padding-top: 3.5vh;
   }
 }
 
@@ -773,19 +776,21 @@ a:hover {
   font-size: 12px;
   line-height: 20px;
   color: #323232;
-  padding-top: .5vh;
+  padding-top: 1vh;
 }
 
 @media screen and (min-width: 768px) {
   .about-detail__paragraph {
     font-size: 14px;
     line-height: 22px;
+    padding-top: 2vh;
     padding-bottom: 5vh;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .about-detail__paragraph {
+    padding-top: 1.5vh;
     padding-bottom: 3.5vh;
   }
 }
@@ -845,6 +850,7 @@ a:hover {
         align-content: flex-start;
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 2vh;
   }
 }
 
@@ -863,14 +869,13 @@ a:hover {
   .photo-gallery__title {
     font-size: 36px;
     line-height: 44px;
-    padding: 2vh 3.125% 3vh 3.125%;
+    padding: 5vh 3.125% 6vh 3.125%;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .photo-gallery__title {
-    padding-left: 1.75vw;
-    padding-right: 1.75vw;
+    padding: 4vh 1.75vw 4.25vw 1.25vw;
   }
 }
 
@@ -881,7 +886,7 @@ a:hover {
 .photo__image {
   /* Photo Block - Image Element */
   width: 100%;
-  padding-bottom: 2vh;
+  padding-bottom: 1.25vh;
   -webkit-filter: grayscale(1);
           filter: grayscale(1);
 }
@@ -894,15 +899,15 @@ a:hover {
 @media screen and (min-width: 768px) {
   .photo__image {
     width: 32%;
-    padding-left: 3.25%;
-    padding-bottom: 3.25%;
+    padding-left: 2.5vw;
+    padding-bottom: 2.5vw;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .photo__image {
-    padding-left: 1.67vw;
-    padding-bottom: 1.67vw;
+    padding-left: 1.25vw;
+    padding-bottom: 1.25vw;
   }
 }
 
@@ -1192,18 +1197,17 @@ a:hover {
   }
 }
 
-.comment__header-date {
+.comment__header-ts {
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
-  width: 34%;
+  width: 60%;
   color: #AFAFAF;
   text-align: right;
-  padding-left: 5%;
 }
 
 @media screen and (min-width: 768px) {
-  .comment__header-date {
+  .comment__header-ts {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;

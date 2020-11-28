@@ -18,7 +18,7 @@
     width: 100%;
 }
 
-p {
+h1, h2, h3, h4, h5, p {
     margin: 0;
 }
 
@@ -104,7 +104,8 @@ a {
                     content: "";
                     display: block;
                     margin: 0 auto;
-                    width: 75%;
+                    // width: 75%;
+                    width: 86px;
                     padding-top: 22px;
                     border-bottom: 4px solid $color-text-field-border;
                 }    
@@ -117,7 +118,7 @@ a {
     /* Footer Block */
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
+    margin-top: 2.5vh;
     padding-left: 3%;
     padding-right: 3%;
     background-color: $color-nav-bg-fill;
@@ -126,6 +127,7 @@ a {
     }
     @include desktop {
         @include padding-lr(12.5vw, 14.9vw);
+        margin-top: 1vh;
     }
     &__header {
         /* Footer Block - Header Element */
@@ -157,7 +159,7 @@ a {
                 padding-top: 10%;
             }
             @include desktop {
-                @include tablap-h2;
+                @include tablap-h1;
                 width: 35%;
                 padding-top: 3%;
             }
@@ -177,10 +179,11 @@ a {
                 /* Footer Block - Header Left Icons Element - Icon Modifier */
                 padding-right: 18%;
                 @include tablet {
-                    padding-top: 12%;
+                    padding-top: 3.5vh;
                     padding-right: 15%;
                 }
                 @include desktop {
+                    padding-top: 4.1vh;
                     padding-right: 8%;
                 }
              }     
@@ -232,7 +235,7 @@ a {
             @include tablap-h3();
         }
         @include desktop {
-            @include mobile-h4-list-contact(500);
+            @include tablap-h3(500);
             padding-top: 0;
         }
     }
@@ -244,12 +247,13 @@ a {
     &__street-city-state-zip {
         /* Address Block - City-State-Zip Element */
         color: $color-text-offset;
-        @include mobile-p;
-        @include tablet {
-            @include mobile-h4-list-contact();
-        }
+        @include mobile-h4-list-contact;
+        // @include tablet {
+        //     @include mobile-h4-list-contact();
+        // }
         @include desktop {
-            @include tablap-h5-label;
+            // @include tablap-h5-label;
+            @include tablap-p-comments;
         }
     }
     &__email {
@@ -263,21 +267,18 @@ a {
 .copyright {
     /* Copyright Block */
     color: $color-text-offset;
-    width: 65%;
+    width: 70%;
     margin: 0;
     &__text {
         /* Copyright Block - Text Element */
-        @include tablap-h5-label;
-        @include padding-tb(15%, 20%);
+        @include mobile-h4-list-contact;
+        @include padding-tb(4vh, 5vh);
         @include tablet {
-            @include padding-tb(6%, 10%);
+            @include padding-tb(4vh, 5vh);
         }
-    }
-    &__cr-symbol {
-        /* Copyright Block - Copyright Symbol Element */
-        @include mobile-p;
-        &:after {
-            content: $copyright;
+        @include desktop {
+            @include tablap-p-comments;
+            @include padding-tb(2vh, 3vh);
         }
     }
 }
