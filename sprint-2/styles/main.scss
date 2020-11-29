@@ -303,6 +303,9 @@
             &:focus {
                 border: 2px solid $color-form-input-focus;
             }
+            &::placeholder {
+                color: $color-form-input-focus;
+            }
             @include tablet {
                 width: 96%;
                 margin-left: 4%;

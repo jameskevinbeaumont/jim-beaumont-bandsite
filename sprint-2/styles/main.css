@@ -1041,6 +1041,22 @@ a:hover {
   border: 2px solid #000000;
 }
 
+.comments__form-input::-webkit-input-placeholder {
+  color: #000000;
+}
+
+.comments__form-input:-ms-input-placeholder {
+  color: #000000;
+}
+
+.comments__form-input::-ms-input-placeholder {
+  color: #000000;
+}
+
+.comments__form-input::placeholder {
+  color: #000000;
+}
+
 @media screen and (min-width: 768px) {
   .comments__form-input {
     width: 96%;
