@@ -212,7 +212,7 @@ const removeAllChildNodes = (parent) => {
     }
 };
 
-// Variable to store the form element
+// Variable to store form elements
 const commentsForm = document.getElementById('comments__form');
 
 // Event Listener - Event ('submit') - commentsForm

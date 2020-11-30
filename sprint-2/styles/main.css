@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: 'Avenir Next';
   src: url("../assets/fonts/Linotype-AvenirNextLTPro-Regular.otf") format("opentype");
@@ -86,8 +85,8 @@ a:hover {
   color: #8f8895;
 }
 
-.a--select {
-  /* Anchor Tag Select Modifier */
+.a--highlight {
+  /* Anchor Tag Highlight Modifier */
   color: #FFFFFF;
 }
 
@@ -242,7 +241,6 @@ a:hover {
   .footer {
     padding-left: 12.5vw;
     padding-right: 14.9vw;
-    margin-top: 1vh;
   }
 }
 
@@ -297,8 +295,8 @@ a:hover {
 
 @media screen and (min-width: 768px) {
   .footer__header-left-GIT {
-    width: 60%;
-    padding-top: 10%;
+    width: 7.875em;
+    padding-top: 6vh;
   }
 }
 
@@ -306,27 +304,27 @@ a:hover {
   .footer__header-left-GIT {
     font-size: 36px;
     line-height: 44px;
-    width: 35%;
+    width: 7.25em;
     padding-top: 3%;
   }
 }
 
 .footer__header-left-icons {
   /* Footer Block - Header Left Icons Element */
-  width: 65%;
+  width: 12em;
   padding-left: 2%;
 }
 
 @media screen and (min-width: 768px) {
   .footer__header-left-icons {
-    width: 50%;
+    width: 14.375em;
     padding-left: 0;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .footer__header-left-icons {
-    height: 9.25vw;
+    height: 8em;
   }
 }
 
@@ -337,15 +335,15 @@ a:hover {
 
 @media screen and (min-width: 768px) {
   .footer__header-left-icons--icon {
-    padding-top: 3.5vh;
+    padding-top: 3.25vh;
     padding-right: 15%;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .footer__header-left-icons--icon {
-    padding-top: 4.1vh;
-    padding-right: 8%;
+    padding-top: 2.875em;
+    padding-right: 2em;
   }
 }
 
@@ -366,14 +364,14 @@ a:hover {
         -ms-flex-align: center;
             align-items: center;
     width: 30%;
-    padding-top: 3%;
+    padding-top: 3vh;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .footer__header-right {
     padding-top: 0;
-    padding-bottom: 2%;
+    padding-bottom: 2vh;
   }
 }
 
@@ -398,6 +396,7 @@ a:hover {
   /* Address Block */
   color: #FFFFFF;
   width: 100%;
+  height: 10.25em;
   margin: 0;
 }
 
@@ -410,7 +409,7 @@ a:hover {
 
 @media screen and (min-width: 1200px) {
   .address {
-    width: 25%;
+    width: 16.375em;
     padding-right: 0;
   }
 }
@@ -420,7 +419,7 @@ a:hover {
   font-size: 14px;
   line-height: 22px;
   font-weight: 500;
-  padding-top: 8%;
+  padding-top: 3vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -443,7 +442,7 @@ a:hover {
 .address__name2 {
   /* Address Block - Name2 Element */
   padding-top: 0;
-  padding-bottom: 5%;
+  padding-bottom: 2vh;
 }
 
 .address__street-city-state-zip, .address__email {
@@ -464,7 +463,7 @@ a:hover {
 .address__email {
   /* Address Block - Email Element */
   color: #FFFFFF;
-  padding-top: 8%;
+  padding-top: 3vh;
 }
 
 .copyright {
@@ -563,24 +562,6 @@ a:hover {
     padding-left: 12.5vw;
     left: 0;
   }
-}
-
-.hero__spec-last-name {
-  /* Hero Block - Special Last Name Element */
-  font-size: 24px;
-  line-height: 32px;
-  font-weight: bold;
-}
-
-@media screen and (min-width: 768px) {
-  .hero__spec-last-name {
-    font-size: 60px;
-    line-height: 68px;
-  }
-}
-
-.hero__spec-last-name:after {
-  content: "Augé";
 }
 
 .about {
@@ -960,6 +941,7 @@ a:hover {
 }
 
 .comments__form {
+  /* Comments Block - Form Element */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -984,6 +966,7 @@ a:hover {
 }
 
 .comments__form-image {
+  /* Comments Block - Form Image Element */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -993,6 +976,7 @@ a:hover {
 }
 
 .comments__form-main {
+  /* Comments Block - Form Main Element */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1004,6 +988,7 @@ a:hover {
 }
 
 .comments__form-label, .comments__form-label--comment {
+  /* Comments Block - Form Label Element */
   font-size: 12px;
   line-height: 20px;
   color: #AFAFAF;
@@ -1028,6 +1013,7 @@ a:hover {
 }
 
 .comments__form-input {
+  /* Comments Block - Form Input Element */
   height: 45px;
   width: 71vw;
   border: 1px solid #AFAFAF;
@@ -1071,6 +1057,7 @@ a:hover {
 }
 
 .comments__form-textarea {
+  /* Comments Block - Form Textarea Element */
   font-family: "Avenir Next", "Roboto", Arial, Helvetica, sans-serif;
   height: 110px;
   width: 71vw;
@@ -1117,6 +1104,7 @@ a:hover {
 }
 
 .comments__form-button {
+  /* Comments Block - Form Button Element */
   color: #FFFFFF;
   background-color: #323232;
   -ms-flex-item-align: end;
@@ -1129,6 +1117,10 @@ a:hover {
   border-radius: 4px;
 }
 
+.comments__form-button:hover {
+  background-color: #0065AD;
+}
+
 @media screen and (min-width: 768px) {
   .comments__form-button {
     width: 170px;
@@ -1137,6 +1129,7 @@ a:hover {
 }
 
 .comments__history {
+  /* Comments Block - History Element */
   width: 90vw;
 }
 
@@ -1154,6 +1147,7 @@ a:hover {
 }
 
 .comment {
+  /* Comment Block */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1166,6 +1160,7 @@ a:hover {
 }
 
 .comment__image {
+  /* Comment Block - Image Element */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1175,6 +1170,7 @@ a:hover {
 }
 
 .comment__detail {
+  /* Comment Block - Detail Element */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1187,6 +1183,7 @@ a:hover {
 }
 
 .comment__header {
+  /* Comment Block - Header Element */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1199,6 +1196,7 @@ a:hover {
 }
 
 .comment__header-name {
+  /* Comment Block - Header Name Element */
   font-size: 13px;
   line-height: 18px;
   font-weight: 600;
@@ -1214,6 +1212,7 @@ a:hover {
 }
 
 .comment__header-ts {
+  /* Comment Block - Header TS (Time Stamp) Element */
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -1232,6 +1231,7 @@ a:hover {
 }
 
 .comment__comments {
+  /* Comment Block - Comments Element */
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -1245,6 +1245,7 @@ a:hover {
 }
 
 .comment__divider {
+  /* Comment Block - Divider Element */
   border-top: 2px solid #AFAFAF;
   width: 100%;
   margin-top: 1.5vh;
@@ -1266,6 +1267,7 @@ a:hover {
 }
 
 .comment-image {
+  /* Comment Image */
   width: 100%;
   height: 100%;
   border-radius: 50%;

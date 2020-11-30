@@ -102,6 +102,5 @@ const insertAfter = (el, referenceNode) => {
 
 // Iterate shows object and build HTML for show display
 shows.forEach(function(show, i) {
-    // console.log(i, show.showDate, show.showVenue, show.showLocation);
     displayShow(show, i);
 });

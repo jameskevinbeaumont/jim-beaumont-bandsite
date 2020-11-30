@@ -36,7 +36,7 @@
         width: 95%;
         padding-right: 5%;
         left: 5%;
-        top: 12%;
+        top: 9vh;
         @include tablet {
             @include tablap-h1-hero;
             line-height: 82px;
@@ -52,9 +52,10 @@
         }
     }
     &__album-text {
+        /* Hero Block - Album Text Element */
         @extend .hero__text;
         top: 0;
-        padding-top: 10%;
+        padding-top: 5vh;
         @include mobile-h2(500);
         @include tablet {
             @include tablap-h2(600);
@@ -77,10 +78,11 @@
 }
 
 .song {
+    /* Song Block */
     position: relative;
     width: 90%;
-    height: 0;
-    top: 15vh;
+    height: 15vh;
+    top: 13.5vh;
     padding-bottom: 15vh;
     @include tablet {
         width: 56%;
@@ -90,7 +92,7 @@
     }
     @include desktop {
         width: 35%;
-        top: -.15vh;
+        top: -5.1vh;
         left: 18%;
         padding-bottom: 17vh;
     }
@@ -117,6 +119,7 @@
         @include padding-lr(12.5vw, 12.5vw);
     }
     &-title {
+        /* Shows Block  - Shows Title Element */
         width: 100%;
         @include tablet {
             padding-top: 3vh;
@@ -127,6 +130,7 @@
         }
     }
     &-detail {
+        /* Shows Block - Shows Detail Element */
         @include desktop {
             width: 75%;
             padding-top: 2vh;
@@ -154,6 +158,7 @@
         }
     }
     &__header {
+        /* Shows Block - Header Element */
         display:none;
         @include tablet {
             display:flex;
@@ -163,19 +168,23 @@
             color: $color-text-label-style;
             }
         &-dates {
+            /* Shows Block - Header Dates Element */
             width:30%;
             padding-left: 3.125%;
         }
         &-venue {
+            /* Shows Block - Header Venue Element */
             width: 22%;
         }
         &-location {
+            /* Shows Block - Header Location Element */
             width: 25%;
         }
     }
 }
 
 .show {
+    /* Show Block */
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -184,12 +193,14 @@
         flex-wrap: wrap;
     }
     &__date-header {
+        /* Show Block - Date Header Element */
         @include mobile-h5-label($color-text-label-style);
         @include tablet {
             display:none;
         }
     }
     &__date {
+        /* Show Block - Date Element */
         @include mobile-h2(600);
         padding-top: .25vh;
         @include tablet {
@@ -202,6 +213,7 @@
         }
     }
     &__venue-header {
+        /* Show Block - Venue Header Element */
         @include mobile-h5-label($color-text-label-style);
         padding-top: 1.5vh;
         @include tablet {
@@ -209,6 +221,7 @@
         }
     }
     &__venue {
+        /* Show Block - Venue Element */
         @include mobile-h2(400);
         padding-top: .25vh;
         @include tablet {
@@ -220,6 +233,7 @@
         }
     }
     &__location-header {
+        /* Show Block - Location Header Element */
         @include mobile-h5-label($color-text-label-style);
         padding-top: 1.5vh;
         @include tablet {
@@ -227,17 +241,19 @@
         }
     }
     &__location {
+        /* Show Block - Location Element */
         @include mobile-h2(400);
         @include padding-tb(.25vh, 3vh);
         @include tablet {
-            @include padding-tb(3vh, 2.5vh);
+            @include padding-tb(3vh, 2vh);
             width: 25%;
         }
         @include desktop {
-            @include padding-tb(2vh, 1.5vh);
+            @include padding-tb(2vh, 3.5vh);
         }
     }
     &__cta {
+        /* Show Block - CTA Element */
         width: 100%;
         padding-bottom: 2%;
         @include tablet {
@@ -250,12 +266,16 @@
         }
     }
     &__cta-button {
+        /* Show Block - CTA Button Element */
         color: $color-text-offset;
         background-color: $color-primary-cta;
         height: 16vw;
         width: 90vw;
         border: none;
         border-radius: 4px;
+        &:hover {
+            background-color: $color-primary-cta-hover;
+        }
         @include tablet {
             width: 20vw;
             height: 50px;
@@ -265,6 +285,7 @@
         }
     }
     &__divider {
+        /* Show Block - Divider Element */
         border-top: 1px solid $color-text-label-style;
         width: 90vw;
         @include tablet {

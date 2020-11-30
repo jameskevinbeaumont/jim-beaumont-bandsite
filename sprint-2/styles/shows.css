@@ -85,8 +85,8 @@ a:hover {
   color: #8f8895;
 }
 
-.a--select {
-  /* Anchor Tag Select Modifier */
+.a--highlight {
+  /* Anchor Tag Highlight Modifier */
   color: #FFFFFF;
 }
 
@@ -241,7 +241,6 @@ a:hover {
   .footer {
     padding-left: 12.5vw;
     padding-right: 14.9vw;
-    margin-top: 1vh;
   }
 }
 
@@ -296,8 +295,8 @@ a:hover {
 
 @media screen and (min-width: 768px) {
   .footer__header-left-GIT {
-    width: 60%;
-    padding-top: 10%;
+    width: 7.875em;
+    padding-top: 6vh;
   }
 }
 
@@ -305,27 +304,27 @@ a:hover {
   .footer__header-left-GIT {
     font-size: 36px;
     line-height: 44px;
-    width: 35%;
+    width: 7.25em;
     padding-top: 3%;
   }
 }
 
 .footer__header-left-icons {
   /* Footer Block - Header Left Icons Element */
-  width: 65%;
+  width: 12em;
   padding-left: 2%;
 }
 
 @media screen and (min-width: 768px) {
   .footer__header-left-icons {
-    width: 50%;
+    width: 14.375em;
     padding-left: 0;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .footer__header-left-icons {
-    height: 9.25vw;
+    height: 8em;
   }
 }
 
@@ -336,15 +335,15 @@ a:hover {
 
 @media screen and (min-width: 768px) {
   .footer__header-left-icons--icon {
-    padding-top: 3.5vh;
+    padding-top: 3.25vh;
     padding-right: 15%;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .footer__header-left-icons--icon {
-    padding-top: 4.1vh;
-    padding-right: 8%;
+    padding-top: 2.875em;
+    padding-right: 2em;
   }
 }
 
@@ -365,14 +364,14 @@ a:hover {
         -ms-flex-align: center;
             align-items: center;
     width: 30%;
-    padding-top: 3%;
+    padding-top: 3vh;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .footer__header-right {
     padding-top: 0;
-    padding-bottom: 2%;
+    padding-bottom: 2vh;
   }
 }
 
@@ -397,6 +396,7 @@ a:hover {
   /* Address Block */
   color: #FFFFFF;
   width: 100%;
+  height: 10.25em;
   margin: 0;
 }
 
@@ -409,7 +409,7 @@ a:hover {
 
 @media screen and (min-width: 1200px) {
   .address {
-    width: 25%;
+    width: 16.375em;
     padding-right: 0;
   }
 }
@@ -419,7 +419,7 @@ a:hover {
   font-size: 14px;
   line-height: 22px;
   font-weight: 500;
-  padding-top: 8%;
+  padding-top: 3vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -442,7 +442,7 @@ a:hover {
 .address__name2 {
   /* Address Block - Name2 Element */
   padding-top: 0;
-  padding-bottom: 5%;
+  padding-bottom: 2vh;
 }
 
 .address__street-city-state-zip, .address__email {
@@ -463,7 +463,7 @@ a:hover {
 .address__email {
   /* Address Block - Email Element */
   color: #FFFFFF;
-  padding-top: 8%;
+  padding-top: 3vh;
 }
 
 .copyright {
@@ -552,7 +552,7 @@ a:hover {
   width: 95%;
   padding-right: 5%;
   left: 5%;
-  top: 12%;
+  top: 9vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -576,8 +576,9 @@ a:hover {
 }
 
 .hero__album-text {
+  /* Hero Block - Album Text Element */
   top: 0;
-  padding-top: 10%;
+  padding-top: 5vh;
   font-size: 14px;
   line-height: 22px;
   font-weight: 500;
@@ -616,10 +617,11 @@ a:hover {
 }
 
 .song {
+  /* Song Block */
   position: relative;
   width: 90%;
-  height: 0;
-  top: 15vh;
+  height: 15vh;
+  top: 13.5vh;
   padding-bottom: 15vh;
 }
 
@@ -635,7 +637,7 @@ a:hover {
 @media screen and (min-width: 1200px) {
   .song {
     width: 35%;
-    top: -.15vh;
+    top: -5.1vh;
     left: 18%;
     padding-bottom: 17vh;
   }
@@ -692,6 +694,7 @@ a:hover {
 }
 
 .shows-title {
+  /* Shows Block  - Shows Title Element */
   width: 100%;
 }
 
@@ -706,6 +709,10 @@ a:hover {
     width: 20%;
     padding-top: 1vh;
   }
+}
+
+.shows-detail {
+  /* Shows Block - Shows Detail Element */
 }
 
 @media screen and (min-width: 1200px) {
@@ -749,6 +756,7 @@ a:hover {
 }
 
 .shows__header {
+  /* Shows Block - Header Element */
   display: none;
 }
 
@@ -767,19 +775,23 @@ a:hover {
 }
 
 .shows__header-dates {
+  /* Shows Block - Header Dates Element */
   width: 30%;
   padding-left: 3.125%;
 }
 
 .shows__header-venue {
+  /* Shows Block - Header Venue Element */
   width: 22%;
 }
 
 .shows__header-location {
+  /* Shows Block - Header Location Element */
   width: 25%;
 }
 
 .show {
+  /* Show Block */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -802,6 +814,7 @@ a:hover {
 }
 
 .show__date-header {
+  /* Show Block - Date Header Element */
   font-size: 12px;
   line-height: 20px;
   color: #AFAFAF;
@@ -814,6 +827,7 @@ a:hover {
 }
 
 .show__date {
+  /* Show Block - Date Element */
   font-size: 14px;
   line-height: 22px;
   font-weight: 600;
@@ -836,6 +850,7 @@ a:hover {
 }
 
 .show__venue-header {
+  /* Show Block - Venue Header Element */
   font-size: 12px;
   line-height: 20px;
   color: #AFAFAF;
@@ -849,6 +864,7 @@ a:hover {
 }
 
 .show__venue {
+  /* Show Block - Venue Element */
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
@@ -870,6 +886,7 @@ a:hover {
 }
 
 .show__location-header {
+  /* Show Block - Location Header Element */
   font-size: 12px;
   line-height: 20px;
   color: #AFAFAF;
@@ -883,6 +900,7 @@ a:hover {
 }
 
 .show__location {
+  /* Show Block - Location Element */
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
@@ -893,7 +911,7 @@ a:hover {
 @media screen and (min-width: 768px) {
   .show__location {
     padding-top: 3vh;
-    padding-bottom: 2.5vh;
+    padding-bottom: 2vh;
     width: 25%;
   }
 }
@@ -901,11 +919,12 @@ a:hover {
 @media screen and (min-width: 1200px) {
   .show__location {
     padding-top: 2vh;
-    padding-bottom: 1.5vh;
+    padding-bottom: 3.5vh;
   }
 }
 
 .show__cta {
+  /* Show Block - CTA Element */
   width: 100%;
   padding-bottom: 2%;
 }
@@ -926,12 +945,17 @@ a:hover {
 }
 
 .show__cta-button {
+  /* Show Block - CTA Button Element */
   color: #FFFFFF;
   background-color: #323232;
   height: 16vw;
   width: 90vw;
   border: none;
   border-radius: 4px;
+}
+
+.show__cta-button:hover {
+  background-color: #0065AD;
 }
 
 @media screen and (min-width: 768px) {
@@ -948,6 +972,7 @@ a:hover {
 }
 
 .show__divider {
+  /* Show Block - Divider Element */
   border-top: 1px solid #AFAFAF;
   width: 90vw;
 }

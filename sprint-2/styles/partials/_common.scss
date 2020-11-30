@@ -32,8 +32,8 @@ a {
 }
 
 .a {
-    &--select {
-        /* Anchor Tag Select Modifier */
+    &--highlight {
+        /* Anchor Tag Highlight Modifier */
         color: $color-text-offset;
     }
 }
@@ -104,7 +104,6 @@ a {
                     content: "";
                     display: block;
                     margin: 0 auto;
-                    // width: 75%;
                     width: 86px;
                     padding-top: 22px;
                     border-bottom: 4px solid $color-text-field-border;
@@ -127,7 +126,6 @@ a {
     }
     @include desktop {
         @include padding-lr(12.5vw, 14.9vw);
-        margin-top: 1vh;
     }
     &__header {
         /* Footer Block - Header Element */
@@ -155,36 +153,36 @@ a {
             color: $color-text-offset;
             @include padding-tb(14%, 5%);
             @include tablet {
-                width: 60%;
-                padding-top: 10%;
+                width: 7.875em;
+                padding-top: 6vh;
             }
             @include desktop {
                 @include tablap-h1;
-                width: 35%;
+                width: 7.25em;
                 padding-top: 3%;
             }
         }
         &-icons {
             /* Footer Block - Header Left Icons Element */
-            width: 65%;
+            width: 12em;;
             padding-left: 2%;
             @include tablet {
-                width: 50%;
+                width: 14.375em;
                 padding-left: 0;
             }
             @include desktop {
-                height: 9.25vw;
+                height: 8em;
             }
             &--icon {
                 /* Footer Block - Header Left Icons Element - Icon Modifier */
                 padding-right: 18%;
                 @include tablet {
-                    padding-top: 3.5vh;
+                    padding-top: 3.25vh;
                     padding-right: 15%;
                 }
                 @include desktop {
-                    padding-top: 4.1vh;
-                    padding-right: 8%;
+                    padding-top: 2.875em;
+                    padding-right: 2em;
                 }
              }     
         }
@@ -197,10 +195,10 @@ a {
             justify-content: flex-end;
             align-items: center;
             width: 30%;
-            padding-top: 3%;
+            padding-top: 3vh;
         }
         @include desktop {
-            @include padding-tb(0, 2%);
+            @include padding-tb(0, 2vh);
         }
     }
 }
@@ -218,19 +216,20 @@ a {
     /* Address Block */
     color: $color-text-offset;
     width: 100%;
+    height: 10.25em;
     margin: 0;
     @include tablet {
         width: 85%;
         padding-right: 3%;
     }
     @include desktop {
-        width: 25%;
+        width: 16.375em;
         padding-right: 0;
     }
     &__name {
         /* Address Block - Name Element */
         @include mobile-h2(500);
-        padding-top: 8%;
+        padding-top: 3vh;
         @include tablet {
             @include tablap-h3();
         }
@@ -242,17 +241,13 @@ a {
     &__name2 {
         /* Address Block - Name2 Element */
         @extend .address__name;
-        @include padding-tb(0, 5%);
+        @include padding-tb(0, 2vh);
     }
     &__street-city-state-zip {
         /* Address Block - City-State-Zip Element */
         color: $color-text-offset;
         @include mobile-h4-list-contact;
-        // @include tablet {
-        //     @include mobile-h4-list-contact();
-        // }
         @include desktop {
-            // @include tablap-h5-label;
             @include tablap-p-comments;
         }
     }
@@ -260,7 +255,7 @@ a {
         /* Address Block - Email Element */
         @extend .address__street-city-state-zip;
         color: $color-text-offset;
-        padding-top: 8%;
+        padding-top: 3vh;
     }
 }
 
