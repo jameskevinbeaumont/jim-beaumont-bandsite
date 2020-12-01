@@ -1,0 +1,99 @@
+// Breakpoint Variables
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1200px;
+  
+  // Breakpoint Mixins
+  @mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+      @content;
+    }
+  }
+
+  // General Helper Mixins
+  @mixin hero-background($url) {
+    background-image: url($url);
+  }
+
+  @mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @mixin padding-lr($left, $right) {
+    padding-left: $left;
+    padding-right: $right;
+  }
+
+  @mixin padding-tb($top, $bottom) {
+    padding-top: $top;
+    padding-bottom: $bottom;
+  }
+
+  // Font based Mixins
+  @mixin mobile-h1($font-weight:bold) {
+    font-size: $m-h1-header;
+    line-height: $m-h1-header-lh;
+    font-weight: $font-weight;
+  }
+
+  @mixin mobile-h2($font-weight:bold) {
+    font-size: $m-h2-subheader;
+    line-height: $m-h2-subheader-lh;
+    font-weight: $font-weight;
+  }
+
+  @mixin mobile-p() {
+    font-size: $m-h4-p;
+    line-height: $m-h4-p-lh;
+  }
+
+  @mixin mobile-h4-list-contact($font-weight:normal) {
+    font-size: $m-h4-list-contact;
+    line-height: $m-h4-list-contact-lh;
+    font-weight: $font-weight;
+  }
+
+  @mixin mobile-h5-label($color-text:$color-paragraph-text) {
+    font-size: $m-h5-label;
+    line-height: $m-h5-label-lh;
+    color: $color-text;
+  }
+
+  @mixin tablap-h1-hero () {
+    font-size: $dt-h1-hero-header;
+    line-height: $dt-h1-hero-header-lh;
+  }
+
+  @mixin tablap-h1() {
+    font-size: $dt-h1-header;
+    line-height: $dt-h1-header-lh;
+  }
+
+  @mixin tablap-h2($font-weight:500) {
+    font-size: $dt-h2-header;
+    line-height: $dt-h2-header-lh;
+    font-weight: $font-weight;
+  }
+
+  @mixin tablap-h3($font-weight:500) {
+    font-size: $dt-h3-Subheader;
+    line-height: $dt-h3-Subheader-lh;
+    font-weight: $font-weight;
+  }
+
+  @mixin tablap-p-comments() {
+    font-size: $dt-h4-p-comments;
+    line-height: $dt-h4-p-comments-lh;
+  }
+
+  @mixin tablap-h5-label() {
+    font-size: $dt-h5-label;
+    line-height: $dt-h5-label-lh;
+  }

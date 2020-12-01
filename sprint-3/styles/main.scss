@@ -1,0 +1,449 @@
+@import "./partials/common";
+
+.hero {
+    /* Hero Block */
+    position: relative;
+    @include flex-center;
+    height: 60vw;
+    width: 100%;
+    @include hero-background('../assets/images/Hero_Festival_Medium.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include tablet {
+        padding: 0;
+    }
+    &::before {
+        /* Hero Block - Pseudo Before Element */
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-color: $color-hero-img-bg;
+    }
+    &__text {
+        /* Hero Block - Text Element */
+        position: absolute;
+        @include mobile-h1;
+        font-weight: bold;
+        color: $color-text-offset;
+        width: 85%;
+        padding-right: 15%;
+        left: 5%;
+        @include tablet {
+            @include tablap-h1-hero;
+            width: 92%;
+            left: 3%;
+        }
+        @include desktop {
+            width: 70%;
+            padding-left: 12.5vw;
+            left: 0;
+        }
+    }
+}
+
+.about {
+    /* About Block */
+    @include flex-center;
+    flex-direction: column;
+    @include padding-lr(5%, 5%);
+    @include tablet {
+        @include padding-lr(3.125%, 3.125%);
+    }
+    @include desktop {
+        @include padding-lr(12.5vw, 12.5vw);
+    }
+    &__common {
+        /* About Block - Common Element */
+        color: $color-paragraph-text;
+        width: 100%;        
+    }
+    &__title {
+        /* About Block - Title Element */
+        @include mobile-h1;
+        @extend .about__common;
+        @include padding-tb(3vh, 2vh);
+        @include tablet {
+            @include tablap-h1;
+            @include padding-tb(5vh, 3.5vh);
+            }
+        @include desktop {
+            @include padding-tb(3.5vh, 3.5vh);
+        }
+    }
+    &__image {
+        /* About Block - Image Element */
+        width: 100%;
+        @include desktop {
+            @include padding-lr(7.8vw, 7.8vw);
+        }
+    }
+    &__subtitle {
+        /* About Block - Subtitle Element */
+        @include mobile-h2(600);
+        @extend .about__common;
+        padding-top: 2.5vh;
+        @include tablet {
+            @include tablap-h2(600);
+            padding-top: 5vh;
+        }
+        @include desktop {
+            @include padding-lr(7.8vw, 7.8vw);
+            padding-top: 3.5vh;
+        }
+    }
+    &__quote-name {
+        /* About Block - Quote Name Element */
+        @include mobile-h4-list-contact(600);
+        @extend .about__common;
+        padding-top: 3vh;
+        @include tablet {
+            @include tablap-h3(600);
+        }
+        @include desktop {
+            @include padding-lr(7.8vw, 7.8vw);
+            padding-top: 2vh;
+        }
+    }
+    &__names {
+        /* About Block - Names Element */
+        @extend .about__subtitle;
+        padding-top: 3.5vh;
+        @include tablet {
+            @include tablap-h2(600);
+            padding-top: 5vh;
+        }
+        @include desktop {
+            padding-top: 3.5vh;
+        }
+    }
+}
+
+.about-detail {
+    /* About Detail Block */
+    @include flex-center;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-right: 5%;
+    @include tablet {
+        flex-direction: row;
+        @include padding-lr(3.125%, 3.125%);
+    }
+    @include desktop {
+        @include padding-lr(20.4vw, 20.4vw);
+    }
+    &__common {
+        /* About Detail Block - Common Element */
+        color: $color-paragraph-text;
+        width: 100%;        
+    }
+    &__paragraph {
+        /* About Detail Block - Paragraph Element */
+        @include mobile-h5-label;
+        @extend .about-detail__common;
+        padding-top: 1vh;    
+        @include tablet {
+            @include tablap-p-comments;
+            padding-top: 2vh;
+            padding-bottom: 5vh;
+        }
+        @include desktop {
+            padding-top: 1.5vh;
+            padding-bottom: 3.5vh;
+        }
+        &--col-divider {
+            /* About Detail Block - Paragraph Element - Column Divider Modifier */
+            padding-top: 1.25vh;
+            @include tablet {
+                display: block;
+                padding-left: 3.25%;
+            }
+            @include desktop {
+                padding-left: 5%;
+            }
+        }
+        &--end {
+            /* About Detail Block - Paragraph Element - End Modifier */
+            padding-bottom: 5vh;
+        }
+    }
+}
+
+.photo-gallery {
+    /* Photo Gallery Block */
+    @include flex-center;
+    flex-direction: column;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: $color-text-field-bg-fill;
+    @include tablet {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        @include padding-lr(0, 0);
+        padding-bottom: 2vh;
+   }
+    @include desktop {
+        @include padding-lr(12.5vw, 12.5vw);
+    }
+    &__title {
+        /* Photo Gallery Block - Title Element */
+        @extend .about__title;
+        @include tablet {
+            @include tablap-h1;
+            padding: 5vh 3.125% 6vh 3.125%;
+        }
+        @include desktop {
+            // @include padding-lr(1.75vw, 1.75vw);
+            padding: 4vh 1.75vw 4.25vw 1.25vw;
+        }
+    }
+}
+
+.photo {
+    /* Photo Block */
+    &__image {
+        /* Photo Block - Image Element */
+        width: 100%;
+        padding-bottom: 1.25vh;
+        filter: grayscale(1);
+        &:hover {
+            filter: grayscale(0);
+        }
+        @include tablet {
+            width: 32%;
+            padding-left: 2.5vw;
+            padding-bottom: 2.5vw;
+        }
+        @include desktop {
+            padding-left: 1.25vw;
+            padding-bottom: 1.25vw;
+        }
+    }
+}
+
+.comments {
+    /* Comments Block */
+    @include flex-center;
+    flex-direction: column;
+    @include padding-lr(5%, 5%);
+    &__title {
+        /* Comments Block - Title Element */
+        @include mobile-h1;
+        color: $color-paragraph-text;
+        width: 100%;        
+        @include padding-tb(4vh, 3vh);
+        @include tablet {
+            @include tablap-h1;
+            @include padding-tb(5vh, 5vh);
+            width: 104%;
+            }
+        @include desktop {
+            @include padding-tb(4vh, 5vh);
+            width: 80%;
+        }
+    }
+    &__form {
+        /* Comments Block - Form Element */
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        @include tablet {
+            width: 88%;
+            padding-left: 7%;
+        }
+        @include desktop {
+            width: 52%;
+        }
+        &-image {
+            /* Comments Block - Form Image Element */
+            display: flex;
+            width: 45px;
+            height: 45px;
+            margin-top: 2.25vh;    
+        }
+        &-main {
+            /* Comments Block - Form Main Element */
+            display: flex;
+            flex-direction: column;
+            width: 84%;
+        }
+        &-label {
+            /* Comments Block - Form Label Element */
+            @include mobile-h5-label($color-text-label-style);
+            padding-left: 6%;
+            @include tablet {
+                padding-left: 4%;
+            }
+            &--comment {
+                @extend .comments__form-label;
+                padding-top: 2vh;
+                padding-left: 6%;
+                @include tablet {
+                    padding-left: 4%;
+                }
+                }
+        }
+        &-input {
+            /* Comments Block - Form Input Element */
+            height: 45px;
+            width: 71vw;
+            border: 1px solid $color-text-label-style;
+            border-radius: 4px;
+            padding-left: 6%;
+            margin-left: 6%;
+            background-color: $color-form-input-bg;
+            &:focus {
+                border: 2px solid $color-form-input-focus;
+            }
+            &::placeholder {
+                color: $color-form-input-focus;
+            }
+            @include tablet {
+                width: 96%;
+                margin-left: 4%;
+            }
+            @include desktop {
+                padding-left: 3%;
+            }
+        }
+        &-textarea {
+            /* Comments Block - Form Textarea Element */
+            font-family: $font-family;
+            height: 110px;
+            width: 71vw;
+            border: 1px solid $color-text-label-style;
+            border-radius: 4px;
+            margin-left: 6%;
+            margin-bottom: 2vh;
+            padding-left: 6%;
+            padding-top: 2.25vh;
+            background-color: $color-form-input-bg;
+            &:focus {
+                border: 2px solid $color-form-input-focus;
+            }
+            &::placeholder {
+                color: $color-form-input-focus;
+            }
+            @include tablet {
+                width: 96%;
+                margin-left: 4%;
+            }
+            @include desktop {
+                padding-left: 3%;
+            }
+        }
+        &-button {
+            /* Comments Block - Form Button Element */
+            color: $color-text-offset;
+            background-color: $color-primary-cta;
+            align-self: flex-end;
+            height: 49px;
+            width: 227px;
+            margin-left: 10%;
+            margin-bottom: 2.25vh;
+            border: none;
+            border-radius: 4px;
+            &:hover {
+                background-color: $color-primary-cta-hover;
+            }
+            @include tablet {
+                width: 170px;
+                height: 52px;
+            }
+        }
+    }
+    &__history {
+        /* Comments Block - History Element */
+        width: 90vw;
+        @include tablet {
+            width: 68vw;
+        }
+        @include desktop {
+            width: 46vw;
+            padding-left: 6vw;
+        }
+    }
+}
+
+.comment {
+    /* Comment Block */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    &__image {
+        /* Comment Block - Image Element */
+        display: flex;
+        width: 45px;
+        height: 45px;
+        margin-top: .5vh;
+    }
+    &__detail {
+        /* Comment Block - Detail Element */
+        display:flex;
+        flex-direction: column;
+        width: 82%;
+        padding-left: 5%;
+    }
+    &__header {
+        /* Comment Block - Header Element */
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding-top: .75vh;
+        &-name {
+            /* Comment Block - Header Name Element */
+            @include mobile-h4-list-contact(600);
+            width: 70%;
+            @include tablet {
+                width: fit-content;
+            }
+        }
+        &-ts {
+            /* Comment Block - Header TS (Time Stamp) Element */
+            @include mobile-h4-list-contact(400);
+            width: 60%;
+            color: $color-text-label-style;
+            text-align: right;
+            // padding-left: 5%;
+            @include tablet {
+                width: fit-content;
+                padding-left: 2%;
+            }
+        }
+    }
+    &__comments {
+        /* Comment Block - Comments Element */
+        @include mobile-h4-list-contact(400);
+        width: 100%;
+        &-text {
+            width: 100%;
+            @include padding-tb(3%, 3%);
+        }
+    }
+    &__divider {
+        /* Comment Block - Divider Element */
+        border-top: 2px solid $color-text-label-style;
+        width: 100%;
+        margin-top: 1.5vh;
+        margin-bottom: 2.25vh;
+        @include tablet {
+            width: 68vw;
+        }
+        @include desktop {
+            width: 37vw;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+
+.comment-image {
+    /* Comment Image */
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; 
+    background-color: $color-text-label-style;
+}

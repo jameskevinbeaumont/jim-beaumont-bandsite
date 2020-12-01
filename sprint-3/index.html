@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BandSite</title>
+    <link href="./styles/main.css" rel="stylesheet">
+</head>
+<!-- Body Block -->
+<body class="body">
+    <!-- Header Block -->
+    <header class="header">
+        <!-- Navigation Menu Bar -->
+        <nav class="navbar">
+            <a class="navbar__nav-link" href="#">
+                <img src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo">
+            </a>
+            <ul class="navbar__nav-list">
+                <li class="navbar__nav-list-item--underline"><a class="a--highlight" href="#">Biography</a></li>
+                <li class="navbar__nav-list-item"><a href="./pages/shows.html">Shows</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1 class="hero__text">Gaspard Aug&egrave; & Xavier de Rosnay</h1>
+        </section>
+        <!-- About Section -->
+        <section class="about">
+            <h2 class="about__title">About The Musicians</h2>
+            <img class="about__image" src="./assets/images/Two_Musicians_Medium.jpg" alt="two musicians">
+            <h2 class="about__subtitle">"We are more comfortable with not fighting what comes naturally. Before we might have thought, 'We need to be smarter than this.'"</h2>
+            <h4 class="about__quote-name">- Xavier de Rosnay</h4>
+            <h2 class="about__names">Xavier de Rosnay & Gaspard Aug&egrave;</h2>
+        </section>
+        <!-- About Section - Detail -->
+        <section class="about-detail">
+            <p class="about-detail__paragraph">Xavier de Rosnay and Gaspard Aug&egrave; had a few
+                mutual friends, who happened to run a record label,
+                seeking tracks for a compilation. With an immediate
+                connection, the pair decided to try their hand at
+                making a song. That’s when they created their
+                breakout single, We Are Your Friends – a feel-good,
+                funk-filled, instant anthem that lost the remix
+                contest, but won the attention of Pedro Winter,
+                director of the newly founded Ed Banger Records,
+                who boasted Daft Punk as former clients. One week
+                later, they were in his office, signing a record deal.</p>
+            <p class="about-detail__paragraph--col-divider"> </p>
+            <p class="about-detail__paragraph">Xavier de Rosnay and Gaspard <span class="about__spec-last-name"></span> had a few
+                mutual friends, who happened to run a record label,
+                seeking tracks for a compilation. With an immediate
+                connection, the pair decided to try their hand at
+                making a song. That’s when they created their
+                breakout single, We Are Your Friends – a feel-good,
+                funk-filled, instant anthem that lost the remix
+                contest, but won the attention of Pedro Winter,
+                director of the newly founded Ed Banger Records,
+                who boasted Daft Punk as former clients. One week
+                later, they were in his office, signing a record deal.</p>
+            <p class="about-detail__paragraph--end"></p>
+        </section>
+        <!-- Photo Gallery Section -->
+        <section class="photo-gallery">
+            <h2 class="photo-gallery__title">Photo Gallery</h2>
+            <div class="photo">
+                <img class="photo__image" src="./assets/images/Photo-gallery-1.jpg" alt="concert crowd image">
+                <img class="photo__image" src="./assets/images/Photo-gallery-2.jpg" alt="woman in concert crowd image">
+                <img class="photo__image" src="./assets/images/Photo-gallery-3.jpg" alt="hands in concert crowd image">
+                <img class="photo__image" src="./assets/images/Photo-gallery-4.jpg" alt="back of woman in concert crowd image">
+                <img class="photo__image" src="./assets/images/Photo-gallery-5.jpg" alt="streamers at concert image">
+                <img class="photo__image" src="./assets/images/Photo-gallery-6.jpg" alt="Xavier de Rosnay on stage image">
+                <img class="photo__image" src="./assets/images/Photo-gallery-7.jpg" alt="concert stage lights image">
+                <img class="photo__image" src="./assets/images/Photo-gallery-8.jpg" alt="sound board image">
+                <img class="photo__image" src="./assets/images/Photo-gallery-9.jpg" alt="confetti at concert image">
+            </div>
+        </section>
+        <!-- Comments Section -->
+        <section class="comments">
+            <h2 class="comments__title">Join the Conversation</h2>
+            <form class="comments__form" id="comments__form" action="">
+                <div class="comments__form-image">
+                    <img class="comment-image" src="../assets/images/Mohan-muruge-sq.jpg">
+                </div>
+                <div class="comments__form-main">
+                    <label class="comments__form-label" for="fullName">NAME</label>
+                    <input 
+                        class="comments__form-input" 
+                        type="text" 
+                        name="fullName" 
+                        id="fullName" 
+                        placeholder="Enter your name" required>
+                    <label class="comments__form-label--comment" for="commentText">COMMENT</label>
+                    <textarea 
+                        class="comments__form-textarea" 
+                        rows="5" cols="35" 
+                        name="commentText" id="commentText" required
+                        placeholder="Add a new comment"></textarea> 
+                    <button class="comments__form-button" id="comments__form-button" type="submit">COMMENT</button>
+                </div>
+            </form>
+            <!-- Comments History - Will be dynamically create via JS -->
+            <div class="comments__history" id="comments-container">
+            </div>
+        </section>
+        <!-- Footer Section -->
+        <section class="footer">
+            <!-- Footer Header -->
+            <div class="footer__header">
+                <div class="footer__header-left">
+                    <h2 class="footer__header-left-GIT">Get In Touch</h2>
+                    <div class="footer__header-left-icons">
+                        <a href="https://www.instagram.com" target="_blank"><img class="footer__header-left-icons--icon" src="./assets/icons/Icon-instagram.svg" alt="instagram"></a>
+                        <a href="https://www.facebook.com" target="_blank"><img class="footer__header-left-icons--icon" src="./assets/icons/Icon-facebook.svg" alt="facebook"></a>
+                        <a href="https://www.twitter.com" target="_blank"><img class="footer__header-left-icons--icon" src="./assets/icons/Icon-twitter.svg" alt="twitter"></a>
+                    </div>                        
+                </div>
+                <div class="footer__header-right">
+                    <a href="#"><img src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo"></a>
+                </div>
+            </div>
+            <!-- Footer Addresses -->
+            <div class="addresses">
+                <div class="address">
+                    <h4 class="address__name">Richard Rovner</h4>
+                    <h4 class="address__name2">The Bees Knees Management</h4>
+                    <h4 class="address__street-city-state-zip">460 King Street West</h4>
+                    <h4 class="address__street-city-state-zip">Toronto, Ontario M5V 1L7</h4>
+                    <h4 class="address__email"><a class="a--highlight" href="mailto:info@thebeesknees.com">info@thebeesknees.com</a></h4>
+                </div>
+                <div class="address">
+                    <h4 class="address__name">Marsha Vlasic</h4>
+                    <h4 class="address__name2">Artist Group International</h4>
+                    <h4 class="address__street-city-state-zip">Booking Agent for</h4>
+                    <h4 class="address__street-city-state-zip">US / South America / Japan</h4>
+                    <h4 class="address__email"><a class="a--highlight" href="mailto:marsha.vlasic@artistgrp.com">marsha.vlasic@artistgrp.com</a></h4>
+                </div>
+                <div class="address">
+                    <h4 class="address__name">Russel Warby</h4>
+                    <h4 class="address__name2">William Morrir Entertainment</h4>
+                    <h4 class="address__street-city-state-zip">Booking Agent for</h4>
+                    <h4 class="address__street-city-state-zip">UK / EU / AU</h4>
+                    <h4 class="address__email"><a class="a--highlight" href="mailto:RLW@wmeentertainment.com">RLW@wmeentertainment.com</a></h4>
+                </div>
+            </div>
+            <!-- Footer Copyright -->
+            <div class="copyright">
+                <h4 class="copyright__text">Copyright The Bees Knees &copy 2018 All Rights Reserved</h4>
+            </div>
+        </section>
+    </main>
+    <!-- scripts -->
+    <script type="text/javascript" src="../scripts/biography.js" defer></script>
+</body>
+</html>

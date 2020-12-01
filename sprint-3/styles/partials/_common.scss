@@ -1,0 +1,279 @@
+@import "./typography";
+@import "./variables";
+@import "./mixins";
+
+* {
+    box-sizing: border-box;
+}
+
+.main {
+    /* Main Block */
+    background-color: $color-background;
+}
+
+.body {
+    /* Body Block */
+    font-family: $font-family;
+    margin: 0;
+    width: 100%;
+}
+
+h1, h2, h3, h4, h5, p {
+    margin: 0;
+}
+
+a {
+    /* Anchor Tag */
+    text-decoration: none;
+    color: $color-text-label-style;
+    &:hover {
+        color: rgb(143, 136, 149);
+    }
+}
+
+.a {
+    &--highlight {
+        /* Anchor Tag Highlight Modifier */
+        color: $color-text-offset;
+    }
+}
+
+.header {
+    /* Header Block */
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+    background-color: $color-nav-bg-fill;
+}
+.navbar {
+    /* Navigation Bar */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    @include tablet {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    &__nav-link {
+        /* Header Block - Navigation Link */
+        margin: 15px 7% 0 3%;
+        @include tablet {
+            margin: 5px 7% 0 3%;
+        }
+        @include desktop {
+            margin-left: 12.5vw;
+            margin-right: 3.89vw;
+        }
+    }
+    &__nav-list {
+        /* Header Block - Navigation List */
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        margin-top: 8px;
+        width: 100%;
+        @include tablet {
+            width: 30%;
+            align-items: flex-start; 
+        }
+        @include desktop {
+            width: 20%;
+        }
+    }
+    &__nav-list-item {
+        /* Header Block - Navigation List Item */
+        @include mobile-h2();
+        text-align: center;
+        width: 50%;
+        padding-bottom: 5.5px;
+        @include tablet {
+            width: 50%;
+            @include padding-tb(40.859px, 0px);
+        }
+        &--underline {
+            @extend .navbar__nav-list-item;
+            border-bottom: 4px solid $color-text-field-border;
+            @include tablet {
+                border-bottom: none;
+                &:after {
+                    content: "";
+                    display: block;
+                    margin: 0 auto;
+                    width: 86px;
+                    padding-top: 22px;
+                    border-bottom: 4px solid $color-text-field-border;
+                }    
+            }
+        }
+    }
+}
+
+.footer {
+    /* Footer Block */
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5vh;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: $color-nav-bg-fill;
+    @include tablet {
+        margin-top: 3vh;
+    }
+    @include desktop {
+        @include padding-lr(12.5vw, 14.9vw);
+    }
+    &__header {
+        /* Footer Block - Header Element */
+        @include tablet {
+            display: flex;
+            height: 15vw;
+        }
+        @include desktop {
+            height: 10vw;
+        }
+    }
+    &__header-left {
+        /* Footer Block - Header Left Element */
+        width: 100%;
+        @include tablet {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 70%;
+        }
+        &-GIT {
+            /* Footer Block - Header Left GIT Element */
+            @include tablap-h1;
+            font-weight: 700;
+            color: $color-text-offset;
+            @include padding-tb(14%, 5%);
+            @include tablet {
+                width: 7.875em;
+                padding-top: 6vh;
+            }
+            @include desktop {
+                @include tablap-h1;
+                width: 7.25em;
+                padding-top: 3%;
+            }
+        }
+        &-icons {
+            /* Footer Block - Header Left Icons Element */
+            width: 12em;;
+            padding-left: 2%;
+            @include tablet {
+                width: 14.375em;
+                padding-left: 0;
+            }
+            @include desktop {
+                height: 8em;
+            }
+            &--icon {
+                /* Footer Block - Header Left Icons Element - Icon Modifier */
+                padding-right: 18%;
+                @include tablet {
+                    padding-top: 3.25vh;
+                    padding-right: 15%;
+                }
+                @include desktop {
+                    padding-top: 2.875em;
+                    padding-right: 2em;
+                }
+             }     
+        }
+    }
+    &__header-right {
+        /* Footer Block - Header Right Element */
+        display: none;
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 30%;
+            padding-top: 3vh;
+        }
+        @include desktop {
+            @include padding-tb(0, 2vh);
+        }
+    }
+}
+
+.addresses {
+    /* Addresses Block */
+    @include tablet {
+        display: flex;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+.address {
+    /* Address Block */
+    color: $color-text-offset;
+    width: 100%;
+    height: 10.25em;
+    margin: 0;
+    @include tablet {
+        width: 85%;
+        padding-right: 3%;
+    }
+    @include desktop {
+        width: 16.375em;
+        padding-right: 0;
+    }
+    &__name {
+        /* Address Block - Name Element */
+        @include mobile-h2(500);
+        padding-top: 3vh;
+        @include tablet {
+            @include tablap-h3();
+        }
+        @include desktop {
+            @include tablap-h3(500);
+            padding-top: 0;
+        }
+    }
+    &__name2 {
+        /* Address Block - Name2 Element */
+        @extend .address__name;
+        @include padding-tb(0, 2vh);
+    }
+    &__street-city-state-zip {
+        /* Address Block - City-State-Zip Element */
+        color: $color-text-offset;
+        @include mobile-h4-list-contact;
+        @include desktop {
+            @include tablap-p-comments;
+        }
+    }
+    &__email {
+        /* Address Block - Email Element */
+        @extend .address__street-city-state-zip;
+        color: $color-text-offset;
+        padding-top: 3vh;
+    }
+}
+
+.copyright {
+    /* Copyright Block */
+    color: $color-text-offset;
+    width: 70%;
+    margin: 0;
+    &__text {
+        /* Copyright Block - Text Element */
+        @include mobile-h4-list-contact;
+        @include padding-tb(4vh, 5vh);
+        @include tablet {
+            @include padding-tb(4vh, 5vh);
+        }
+        @include desktop {
+            @include tablap-p-comments;
+            @include padding-tb(2vh, 3vh);
+        }
+    }
+}
