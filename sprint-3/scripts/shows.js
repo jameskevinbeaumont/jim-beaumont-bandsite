@@ -1,36 +1,47 @@
-// Create Array of Show Objects
-let shows = [
-    {
-    "showDate": "12/17/2018",
-    "showVenue": "Ronald Lane",
-    "showLocation": "San Francisco, CA"
-    },
-    {
-    "showDate": "07/18/2019",
-    "showVenue": "Pier 3 East",
-    "showLocation": "San Francisco, CA"
-    },
-    {
-    "showDate": "07/22/2019",
-    "showVenue": "View Loungue",
-    "showLocation": "San Francisco, CA"
-    },
-    {
-    "showDate": "08/12/2019",
-    "showVenue": "Hyatt Agency",
-    "showLocation": "San Francisco, CA"
-    },
-    {
-    "showDate": "09/05/2019",
-    "showVenue": "Moscow Center",
-    "showLocation": "San Francisco, CA"
-    },
-    {
-    "showDate": "08/11/2019",
-    "showVenue": "Pres Club",
-    "showLocation": "San Francisco, CA"
-    }  
-]
+// Variables
+//let BS_API_KEY = '?api_key=';
+let BS_API_KEY = '?api_key=58ddcf95-8713-4df8-b366-d7d3793d36be';
+const BS_URL = 'https://project-1-api.herokuapp.com/';
+const BS_REGISTER = 'register';
+const BS_SHOWS = 'showdates';
+const BS_COMMENTS = 'comments';
+let show = '';
+let shows = [];
+
+// console.log(BS_API_KEY)
+// console.log(`${BS_URL}${BS_SHOWS}${BS_API_KEY}`)
+
+let getShowsData = axios.get(`${BS_URL}${BS_SHOWS}${BS_API_KEY}`)
+    .then(result => {
+        // console.log(result)
+        for (let i = 0; i < result.data.length; i++) {
+            // console.log(result.data[i])
+            show = {"id":result.data[i].id,"date":result.data[i].date,"place":result.data[i].place,"location":result.data[i].location};
+            shows.push(show);
+        }
+        shows.forEach(function(show, i) {
+            displayShow(show, i);
+        });        
+    })
+    .catch(err => console.log('Error=>', err.response));
+
+// console.log('shows=>',shows);
+
+// let getAPIKey = axios.get(`${BS_URL}${BS_REGISTER}`)
+//     .then(result => {
+//         BS_API_KEY += result.data.api_key
+//         console.log(BS_API_KEY)
+//         console.log(`${BS_URL}${BS_SHOWS}${BS_API_KEY}`)
+//         axios.get(`${BS_URL}${BS_SHOWS}${BS_API_KEY}`)
+//         .then(result => {
+//             console.log(result)
+//             for (i=0;i<result.data.length;i++) {
+//                 console.log(result.data[i])
+//             }
+//         })
+//         .catch(err => console.log('Error API Key=>', err.response))
+//     })
+//     .catch(err => console.log('Error Register=>', err.response));
 
 // Display show detail
 const displayShow = (showObj, i) => {
@@ -56,7 +67,7 @@ const displayShow = (showObj, i) => {
     // Create "show__date" div and display show date
     let showDate = document.createElement('div');
     showDate.classList.add('show__date');
-    let rawDate = new Date(showObj.showDate);
+    let rawDate = new Date(showObj.date);
     let strDate = rawDate.toDateString();
     showDate.innerText = strDate;
     document.getElementById(newDivID).appendChild(showDate);
@@ -68,7 +79,7 @@ const displayShow = (showObj, i) => {
     // Create "show__venue" div and display venue
     let showVenue = document.createElement('div');
     showVenue.classList.add('show__venue');
-    showVenue.innerText = showObj.showVenue;
+    showVenue.innerText = showObj.place;
     document.getElementById(newDivID).appendChild(showVenue);
     // Create "show__location-header" div and "LOCATION" column label
     let showLocationHeader = document.createElement('div');
@@ -78,7 +89,7 @@ const displayShow = (showObj, i) => {
     // Create "show__location" div and display location
     let showLocation = document.createElement('div');
     showLocation.classList.add('show__location');
-    showLocation.innerText = showObj.showLocation;
+    showLocation.innerText = showObj.location;
     document.getElementById(newDivID).appendChild(showLocation);
     // Create "show__cta" div and CTA button
     let showCTA = document.createElement('div');
@@ -99,8 +110,3 @@ const displayShow = (showObj, i) => {
 const insertAfter = (el, referenceNode) => {
     referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
 };
-
-// Iterate shows object and build HTML for show display
-shows.forEach(function(show, i) {
-    displayShow(show, i);
-});

@@ -117,6 +117,7 @@
     @include desktop {
         align-items: flex-start;
         @include padding-lr(12.5vw, 12.5vw);
+        width: 105%;
     }
     &-title {
         /* Shows Block  - Shows Title Element */
@@ -167,6 +168,9 @@
             @include mobile-h5-label;
             color: $color-text-label-style;
             }
+        @include desktop {
+            padding-bottom: 2.5vh;
+        }
         &-dates {
             /* Shows Block - Header Dates Element */
             width:30%;
@@ -192,6 +196,9 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
+    @include desktop {
+        align-items: center;
+    }
     &__date-header {
         /* Show Block - Date Header Element */
         @include mobile-h5-label($color-text-label-style);
@@ -205,11 +212,14 @@
         padding-top: .25vh;
         @include tablet {
             width: 30%;
+            height: 44px;
             padding-top: 3vh;
             padding-left: 3.125%;
         }
         @include desktop {
-            @include padding-tb(2vh, 1.5vh);
+            // @include padding-tb(2vh, 1.5vh);
+            padding: 0;
+            height: 44px;
         }
     }
     &__venue-header {
@@ -227,9 +237,12 @@
         @include tablet {
             padding-top: 3vh;
             width: 22%;
+            height: 44px;
         }
         @include desktop {
-            @include padding-tb(2vh, 1.5vh);
+            // @include padding-tb(2vh, 1.5vh);
+            padding: 0;
+            height: 44px;
         }
     }
     &__location-header {
@@ -245,11 +258,14 @@
         @include mobile-h2(400);
         @include padding-tb(.25vh, 3vh);
         @include tablet {
-            @include padding-tb(3vh, 2vh);
+            @include padding-tb(3vh, 6vh);
             width: 25%;
+            height: 44px;
         }
         @include desktop {
-            @include padding-tb(2vh, 3.5vh);
+            // @include padding-tb(2vh, 6.5vh);
+            padding: 0;
+            height: 44px;
         }
     }
     &__cta {
@@ -259,10 +275,12 @@
         @include tablet {
             width: 20vw;
             height: 50px;
-            @include padding-tb(1%, 0);
+            @include padding-tb(2vh, 0);
         }
         @include desktop {
             width: 11vw;
+            // @include padding-tb(1vh, 0);
+            padding: 1vh 0 7vh 0;
         }
     }
     &__cta-button {
@@ -292,7 +310,9 @@
             width: 94vw;
         }
         @include desktop {
-            width: 52vw;
+            width: 57vw;
+            margin-top: 0vw;
+            margin-right: 4.5vh;
         }
     }
 }

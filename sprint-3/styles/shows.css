@@ -690,6 +690,7 @@ a:hover {
             align-items: flex-start;
     padding-left: 12.5vw;
     padding-right: 12.5vw;
+    width: 105%;
   }
 }
 
@@ -774,6 +775,12 @@ a:hover {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .shows__header {
+    padding-bottom: 2.5vh;
+  }
+}
+
 .shows__header-dates {
   /* Shows Block - Header Dates Element */
   width: 30%;
@@ -813,6 +820,14 @@ a:hover {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .show {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 .show__date-header {
   /* Show Block - Date Header Element */
   font-size: 12px;
@@ -837,6 +852,7 @@ a:hover {
 @media screen and (min-width: 768px) {
   .show__date {
     width: 30%;
+    height: 44px;
     padding-top: 3vh;
     padding-left: 3.125%;
   }
@@ -844,8 +860,8 @@ a:hover {
 
 @media screen and (min-width: 1200px) {
   .show__date {
-    padding-top: 2vh;
-    padding-bottom: 1.5vh;
+    padding: 0;
+    height: 44px;
   }
 }
 
@@ -875,13 +891,14 @@ a:hover {
   .show__venue {
     padding-top: 3vh;
     width: 22%;
+    height: 44px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .show__venue {
-    padding-top: 2vh;
-    padding-bottom: 1.5vh;
+    padding: 0;
+    height: 44px;
   }
 }
 
@@ -911,15 +928,16 @@ a:hover {
 @media screen and (min-width: 768px) {
   .show__location {
     padding-top: 3vh;
-    padding-bottom: 2vh;
+    padding-bottom: 6vh;
     width: 25%;
+    height: 44px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .show__location {
-    padding-top: 2vh;
-    padding-bottom: 3.5vh;
+    padding: 0;
+    height: 44px;
   }
 }
 
@@ -933,7 +951,7 @@ a:hover {
   .show__cta {
     width: 20vw;
     height: 50px;
-    padding-top: 1%;
+    padding-top: 2vh;
     padding-bottom: 0;
   }
 }
@@ -941,6 +959,7 @@ a:hover {
 @media screen and (min-width: 1200px) {
   .show__cta {
     width: 11vw;
+    padding: 1vh 0 7vh 0;
   }
 }
 
@@ -985,7 +1004,9 @@ a:hover {
 
 @media screen and (min-width: 1200px) {
   .show__divider {
-    width: 52vw;
+    width: 57vw;
+    margin-top: 0vw;
+    margin-right: 4.5vh;
   }
 }
 /*# sourceMappingURL=shows.css.map */
