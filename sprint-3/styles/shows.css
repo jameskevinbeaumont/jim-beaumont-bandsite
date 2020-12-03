@@ -619,15 +619,15 @@ a:hover {
 .song {
   /* Song Block */
   position: relative;
-  width: 90%;
-  height: 15vh;
+  width: 288px;
+  height: 134px;
   top: 13.5vh;
   padding-bottom: 15vh;
 }
 
 @media screen and (min-width: 768px) {
   .song {
-    width: 56%;
+    width: 430px;
     top: 19vh;
     left: -19%;
     padding-bottom: 14vh;
@@ -636,8 +636,9 @@ a:hover {
 
 @media screen and (min-width: 1200px) {
   .song {
-    width: 35%;
-    top: -5.1vh;
+    width: 450px;
+    height: 180px;
+    top: -2vh;
     left: 18%;
     padding-bottom: 17vh;
   }
@@ -734,8 +735,8 @@ a:hover {
   font-size: 24px;
   line-height: 32px;
   font-weight: bold;
-  padding-top: 2vh;
-  padding-bottom: 1vh;
+  padding-top: 3.5vh;
+  padding-bottom: 3vh;
 }
 
 @media screen and (min-width: 768px) {
@@ -785,6 +786,12 @@ a:hover {
   /* Shows Block - Header Dates Element */
   width: 30%;
   padding-left: 3.125%;
+}
+
+@media screen and (min-width: 1200px) {
+  .shows__header-dates {
+    padding-left: 0;
+  }
 }
 
 .shows__header-venue {

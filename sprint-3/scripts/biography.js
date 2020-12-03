@@ -1,52 +1,79 @@
-// Create Array of Comment Objects
-let comments = [
-    {
-    'commentImage': '',
-    'commentName': 'Michael Lyons',
-    'commentDate': '11/17/2020 08:14:27',
-    'commentTS': '',
-    'commentText': 'They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.'
-    },
-    {
-    'commentImage': '',
-    'commentName': 'Gary Wong',
-    'commentDate': '05/12/2020 23:24:00',
-    'commentTS': '',
-    'commentText': 'Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!'
-    },
-    {
-    'commentImage': '',
-    'commentName': 'Theodore Duncan',
-    'commentDate': '08/15/2018 15:48:57',
-    'commentTS': '',
-    'commentText': 'How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!'
-    }
-]
+// Variables
+const BS_API_KEY = '?api_key=58ddcf95-8713-4df8-b366-d7d3793d36be';
+const BS_URL = 'https://project-1-api.herokuapp.com/';
+const BS_COMMENTS = 'comments';
+let maxCommentIndex = 0;
+let lastCommentId = '';
+let comment = '';
+let commentsAPI = [];
+let comments = [];
+
+const getCommentsData = axios.get(`${BS_URL}${BS_COMMENTS}${BS_API_KEY}`)
+    .then(result => {
+        for (let i = 0; i < result.data.length; i++) {
+            comment = {"name":result.data[i].name,"comment":result.data[i].comment,"id":result.data[i].id,"likes":result.data[i].likes,"timestamp":result.data[i].timestamp}
+            commentsAPI.push(comment)
+        }
+        console.log(commentsAPI)
+        // Reversing the order of the array returned by the API so that
+        // comments history is displayed newest to oldest
+        // comments.slice().reverse()
+        //     .forEach(function(comment, i) {
+        //         displayComment(comment, i)
+        //         maxCommentIndex = i
+        if (commentsAPI.length > 3) {
+            comments = commentsAPI.slice(3).reverse()
+            commentsAPI.splice(3, commentsAPI.length - 3)
+            comments = comments.concat(commentsAPI);
+        }
+        comments.forEach(function(comment, i) {
+            displayComment(comment, i)
+            maxCommentIndex = i
+        })
+        insertCommentDivider()
+    })
+    .catch(err => console.log('Error=>', err.response));
 
 // Function - Create comment detail HTML
 const displayComment = (commentObj, i) => {
     // Declare local variables
     let ref;
-    // Determine if we already have comments listed
-    if (i == 0) {
-        ref = document.querySelector('.comments__history');
+    // Determine if we are iterating the array for the first
+    // time (0) or are calling it after adding a new comment (-1)
+    // else iterating the initial array after the first comment
+    // has already been displayed
+    if (i === 0 || i === -1) {
+        ref = document.getElementById('comments-container');
     } else {
         ref = document.getElementById('comment-' + (i - 1));
+        // ref = document.getElementById(lastCommentId);
     };
+    // lastCommentId = commentObj.id;
+    // Create the comment HTML
+    createCommentHTML(commentObj, i, ref);
+};
+
+// Function - Create comment HTML
+const createCommentHTML = (commentObj, i, ref) => {
     // Create the new comment detail HTML
     // Create the divider
     let commentDivider = document.createElement('hr');
     commentDivider.classList.add('comment__divider');
     // If this is the first pass, make sure the divider is placed
     // INSIDE <div class="comments__history">
-    if (i == 0) {
-        ref.appendChild(commentDivider)
+    if (i === 0) {
+        ref.appendChild(commentDivider);
+    } else if (i === -1) {
+        ref.insertBefore(commentDivider, ref.childNodes[0]);
+        i = maxCommentIndex;
     } else {
         insertAfter(commentDivider, ref);
     }
     // Create the new comment div
     let commentDiv = document.createElement('div');
     let commentDivID = 'comment-' + i;
+    // let commentDivID = '';
+    // commentDivID = commentObj.id;
     commentDiv.classList.add('comment');
     commentDiv.id = commentDivID;
     insertAfter(commentDiv, commentDivider);
@@ -58,6 +85,10 @@ const displayComment = (commentObj, i) => {
     let commentImage = document.createElement('img');
     commentImage.classList.add('comment-image');
     commentImageDiv.appendChild(commentImage);
+    // Create image comment-image-del
+    // let commentImageDel = document.createElement('img');
+    // commentImageDel.classList.add('comment-image-del');
+    // commentImageDiv.appendChild(commentImageDel);
     // Create comment detail
     let commentDetail = document.createElement('div');
     commentDetail.classList.add('comment__detail');
@@ -69,29 +100,34 @@ const displayComment = (commentObj, i) => {
     // Create comment header - name
     let commentName = document.createElement('p');
     commentName.classList.add('comment__header-name');
-    commentName.innerText = commentObj.commentName;
+    commentName.innerText = commentObj.name;
     commentHeader.appendChild(commentName);
     // Update the timestamp on the comment detail
     // based on the current date and time
-    commentObj.commentTS = generateTimeStamp(commentObj.commentDate);
+    commentObj.timestamp = generateTimeStamp(commentObj.timestamp);
     // Create comment header - timestamp (ts)
     let commentTS = document.createElement('p');
     commentTS.classList.add('comment__header-ts');
-    commentTS.innerText = commentObj.commentTS;
+    commentTS.innerText = commentObj.timestamp;
     commentHeader.appendChild(commentTS);
     // Create comment comments
     let commentComments = document.createElement('div');
     commentComments.classList.add('comment__comments');
+    commentComments.id = commentObj.id;
+    let onClickDiv = "printClicked(this)";
+    commentComments.setAttribute('onclick', onClickDiv);
     insertAfter(commentComments, commentHeader);
     // Create comment comments - text
     let commentText = document.createElement('p');
     commentText.classList.add('comment__comments-text');
-    commentText.innerText = commentObj.commentText;
+    commentText.innerText = commentObj.comment;
+    commentText.setAttribute('del-tooltip', 'Click to delete!');
     commentComments.appendChild(commentText);
 };
 
 // Function - Insert final comment divider
 const insertCommentDivider = () => {
+    // let ref = document.getElementById(lastCommentId);
     let ref = document.getElementById('comment-' + (maxCommentIndex));
     let commentDivider = document.createElement('hr');
     commentDivider.classList.add('comment__divider');
@@ -99,18 +135,19 @@ const insertCommentDivider = () => {
 };
 
 // Function - Insert HTML after parent node
-const insertAfter = (el, referenceNode) => {
-    referenceNode.parentNode.insertBefore(el, referenceNode.nextSibling);
+const insertAfter = (element, referenceNode) => {
+    referenceNode.parentNode.insertBefore(element, referenceNode.nextSibling);
 };
 
-// Function - Iterate comment object array and build HTML for comment display
-let maxCommentIndex = 0;
-const displayComments = () => {
-    comments.forEach(function(comment, i) {
-        displayComment(comment, i);
-        maxCommentIndex = i;
-    });
-    insertCommentDivider();
+// Function - Test div Click!
+const printClicked = (element) => {
+    console.log(element.id);
+    let confirmDel = confirm('Are you sure you want to delete this comment?');
+    if (confirmDel) {
+        alert('YUP! Delete it!');
+    } else {
+        alert('NOPE! Do not delete it!');
+    }
 };
 
 // Function - Format current date (mm/dd/yyyy)
@@ -173,7 +210,7 @@ const generateTimeStamp = (commentObjDate) => {
             tsText = `1 hour ago`;
             break;
         case (diffHours < 24):
-            tsText = `${parseInt((diffMins / 60))} hours ago`;
+            tsText = `${parseInt(diffHours)} hours ago`;
             break;
         case (diffHours < 48):
             tsText = `1 day ago`;
@@ -205,13 +242,6 @@ const generateTimeStamp = (commentObjDate) => {
     return tsText;
 };
 
-// Function - Remove all child nodes of a node
-const removeAllChildNodes = (parent) => {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
-};
-
 // Variable to store form elements
 const commentsForm = document.getElementById('comments__form');
 
@@ -219,29 +249,31 @@ const commentsForm = document.getElementById('comments__form');
 commentsForm.addEventListener('submit', function(e) {
     // Prevent page from re-loading
     e.preventDefault();
-
     // Get the comment data from the form and save it to the newComment object
     let newComment = {
-        commentImage: '',
-        commentName: e.target.fullName.value,
-        commentDate: getCurrentDate(),
-        commentTS: '',
-        commentText: e.target.commentText.value
+        name: e.target.fullName.value,
+        comment: e.target.commentText.value
     };
-    // Add the newComment object to the first position in the object array
-    comments.splice(0, 0, newComment);
-    // console.log(comments);
-    // Clear the comments from the page
-    let container = document.getElementById('comments-container');
-    removeAllChildNodes(container);
-    // Rebuild the comments section of the page
-    displayComments();
+    // Add the newComment to the API
+    let commentPost = axios.post(`${BS_URL}${BS_COMMENTS}${BS_API_KEY}`, {
+        name: newComment.name,
+        comment: newComment.comment
+    })
+    .then(result => { 
+        newComment = {
+            name: result.data.name,
+            comment: result.data.comment,
+            id: result.data.id,
+            likes: result.data.likes,
+            timestamp: result.data.timestamp
+        }
+        comments.splice(0, 0, newComment)
+        maxCommentIndex += 1
+        displayComment(newComment, -1)
+    })
+    .catch(err => console.log('Error=>', err.response));
     // Clear the input fields
     commentsForm.reset();
     // Reset the focus fullName input
     document.getElementById('fullName').focus();
 });
-
-// If page is initialized or refreshed, get the comments from the object array
-// and display them to the page
-displayComments();

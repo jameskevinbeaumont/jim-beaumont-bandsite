@@ -284,16 +284,18 @@
                 @include tablet {
                     padding-left: 4%;
                 }
-                }
+            }
         }
         &-input {
             /* Comments Block - Form Input Element */
+            font-family: $font-family;
             height: 45px;
             width: 71vw;
             border: 1px solid $color-text-label-style;
             border-radius: 4px;
             padding-left: 6%;
             margin-left: 6%;
+            outline: none;
             background-color: $color-form-input-bg;
             &:focus {
                 border: 2px solid $color-form-input-focus;
@@ -320,6 +322,7 @@
             margin-bottom: 2vh;
             padding-left: 6%;
             padding-top: 2.25vh;
+            outline: none;
             background-color: $color-form-input-bg;
             &:focus {
                 border: 2px solid $color-form-input-focus;
@@ -376,9 +379,17 @@
     &__image {
         /* Comment Block - Image Element */
         display: flex;
+        flex-direction: column;
         width: 45px;
         height: 45px;
         margin-top: .5vh;
+    }
+    &-image {
+        /* Comment Block - Comment Image */
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; 
+    background-color: $color-text-label-style;
     }
     &__detail {
         /* Comment Block - Detail Element */
@@ -407,7 +418,6 @@
             width: 60%;
             color: $color-text-label-style;
             text-align: right;
-            // padding-left: 5%;
             @include tablet {
                 width: fit-content;
                 padding-left: 2%;
@@ -416,12 +426,35 @@
     }
     &__comments {
         /* Comment Block - Comments Element */
+        position: relative;
         @include mobile-h4-list-contact(400);
         width: 100%;
         &-text {
             width: 100%;
             @include padding-tb(3%, 3%);
-        }
+            &::before{
+                content: attr(del-tooltip);
+                display:none;
+                top: -1vw;
+                font-size: 9px;
+                color: white;
+                border-radius:4px;
+                background: rgba(0, 0, 0, 0.5);
+                width: 66px;
+                @include tablet {
+                    width: 72px;
+                    top: -.65vw;
+                    font-size: 10px;
+                    }
+                @include desktop {
+                    top: -.25vw;
+                }
+            }
+            &:hover::before {
+                position:absolute;
+                display: block;
+            }
+            }
     }
     &__divider {
         /* Comment Block - Divider Element */
@@ -438,12 +471,4 @@
             margin-right: 0;
         }
     }
-}
-
-.comment-image {
-    /* Comment Image */
-    width: 100%;
-    height: 100%;
-    border-radius: 50%; 
-    background-color: $color-text-label-style;
 }

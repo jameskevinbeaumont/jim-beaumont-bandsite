@@ -1,21 +1,13 @@
 // Variables
-//let BS_API_KEY = '?api_key=';
-let BS_API_KEY = '?api_key=58ddcf95-8713-4df8-b366-d7d3793d36be';
+const BS_API_KEY = '?api_key=58ddcf95-8713-4df8-b366-d7d3793d36be';
 const BS_URL = 'https://project-1-api.herokuapp.com/';
-const BS_REGISTER = 'register';
 const BS_SHOWS = 'showdates';
-const BS_COMMENTS = 'comments';
 let show = '';
 let shows = [];
 
-// console.log(BS_API_KEY)
-// console.log(`${BS_URL}${BS_SHOWS}${BS_API_KEY}`)
-
 let getShowsData = axios.get(`${BS_URL}${BS_SHOWS}${BS_API_KEY}`)
     .then(result => {
-        // console.log(result)
         for (let i = 0; i < result.data.length; i++) {
-            // console.log(result.data[i])
             show = {"id":result.data[i].id,"date":result.data[i].date,"place":result.data[i].place,"location":result.data[i].location};
             shows.push(show);
         }
@@ -24,24 +16,6 @@ let getShowsData = axios.get(`${BS_URL}${BS_SHOWS}${BS_API_KEY}`)
         });        
     })
     .catch(err => console.log('Error=>', err.response));
-
-// console.log('shows=>',shows);
-
-// let getAPIKey = axios.get(`${BS_URL}${BS_REGISTER}`)
-//     .then(result => {
-//         BS_API_KEY += result.data.api_key
-//         console.log(BS_API_KEY)
-//         console.log(`${BS_URL}${BS_SHOWS}${BS_API_KEY}`)
-//         axios.get(`${BS_URL}${BS_SHOWS}${BS_API_KEY}`)
-//         .then(result => {
-//             console.log(result)
-//             for (i=0;i<result.data.length;i++) {
-//                 console.log(result.data[i])
-//             }
-//         })
-//         .catch(err => console.log('Error API Key=>', err.response))
-//     })
-//     .catch(err => console.log('Error Register=>', err.response));
 
 // Display show detail
 const displayShow = (showObj, i) => {

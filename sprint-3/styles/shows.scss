@@ -80,19 +80,20 @@
 .song {
     /* Song Block */
     position: relative;
-    width: 90%;
-    height: 15vh;
+    width: 288px;
+    height: 134px;
     top: 13.5vh;
     padding-bottom: 15vh;
     @include tablet {
-        width: 56%;
+        width: 430px;
         top: 19vh;
         left: -19%;
         padding-bottom: 14vh;
     }
     @include desktop {
-        width: 35%;
-        top: -5.1vh;
+        width: 450px;
+        height: 180px;
+        top: -2vh;
         left: 18%;
         padding-bottom: 17vh;
     }
@@ -146,7 +147,7 @@
         /* Shows Block - Title Element */
         @include mobile-h1;
         @extend .shows__common;
-        @include padding-tb(2vh, 1vh);
+        @include padding-tb(3.5vh, 3vh);
         @include tablet {
             @include tablap-h1;
             padding: 1vh 3.125% 0 3.125%;
@@ -175,6 +176,9 @@
             /* Shows Block - Header Dates Element */
             width:30%;
             padding-left: 3.125%;
+            @include desktop {
+                padding-left: 0;
+            }
         }
         &-venue {
             /* Shows Block - Header Venue Element */
