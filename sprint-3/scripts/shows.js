@@ -5,7 +5,7 @@ const BS_SHOWS = 'showdates';
 let show = '';
 let shows = [];
 
-let getShowsData = axios.get(`${BS_URL}${BS_SHOWS}${BS_API_KEY}`)
+axios.get(`${BS_URL}${BS_SHOWS}${BS_API_KEY}`)
     .then(result => {
         for (let i = 0; i < result.data.length; i++) {
             show = {"id":result.data[i].id,"date":result.data[i].date,"place":result.data[i].place,"location":result.data[i].location};

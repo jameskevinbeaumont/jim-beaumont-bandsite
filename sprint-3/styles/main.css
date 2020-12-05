@@ -1121,7 +1121,7 @@ a:hover {
 }
 
 .comments__form-button:hover {
-  background-color: #0065AD;
+  background-color: #000000;
 }
 
 @media screen and (min-width: 768px) {

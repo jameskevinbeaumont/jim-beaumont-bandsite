@@ -1,32 +1,38 @@
 // Variables
 const BS_API_KEY = '?api_key=58ddcf95-8713-4df8-b366-d7d3793d36be';
 const BS_URL = 'https://project-1-api.herokuapp.com/';
-const BS_COMMENTS = 'comments';
+const BS_COMMENTS = 'comments/';
 let maxCommentIndex = 0;
 let lastCommentId = '';
 let comment = '';
 let commentsAPI = [];
 let comments = [];
 
-const getCommentsData = axios.get(`${BS_URL}${BS_COMMENTS}${BS_API_KEY}`)
+axios.get(`${BS_URL}${BS_COMMENTS}${BS_API_KEY}`)
     .then(result => {
         for (let i = 0; i < result.data.length; i++) {
-            comment = {"name":result.data[i].name,"comment":result.data[i].comment,"id":result.data[i].id,"likes":result.data[i].likes,"timestamp":result.data[i].timestamp}
+            comment = {"name":result.data[i].name,"comment":result.data[i].comment,"id":result.data[i].id,"likes":result.data[i].likes,"timestamp":result.data[i].timestamp,"index":0}
             commentsAPI.push(comment)
         }
-        console.log(commentsAPI)
-        // Reversing the order of the array returned by the API so that
-        // comments history is displayed newest to oldest
-        // comments.slice().reverse()
-        //     .forEach(function(comment, i) {
-        //         displayComment(comment, i)
-        //         maxCommentIndex = i
+        // Examining the raw JSON data returned from the API
+        // and if there are only the 3 default comments, do
+        // nothing other than moving the contents to the working
+        // array otherwise, reverse the order of the non-default
+        // comments and store them in the working array, 
+        // take them out of the API array and then move the 
+        // default 3 to the end of the working array, in their
+        // original order, per our TA
         if (commentsAPI.length > 3) {
             comments = commentsAPI.slice(3).reverse()
             commentsAPI.splice(3, commentsAPI.length - 3)
             comments = comments.concat(commentsAPI);
+        } else {
+            comments = commentsAPI;
         }
+        // Loop through the working comments array
+        // and display the comments
         comments.forEach(function(comment, i) {
+            comment.index = i
             displayComment(comment, i)
             maxCommentIndex = i
         })
@@ -46,9 +52,7 @@ const displayComment = (commentObj, i) => {
         ref = document.getElementById('comments-container');
     } else {
         ref = document.getElementById('comment-' + (i - 1));
-        // ref = document.getElementById(lastCommentId);
     };
-    // lastCommentId = commentObj.id;
     // Create the comment HTML
     createCommentHTML(commentObj, i, ref);
 };
@@ -59,8 +63,15 @@ const createCommentHTML = (commentObj, i, ref) => {
     // Create the divider
     let commentDivider = document.createElement('hr');
     commentDivider.classList.add('comment__divider');
+    if (i === -1) {
+        commentDivider.id = 'comment__divider-' + maxCommentIndex;
+    } else {
+        commentDivider.id = 'comment__divider-' + i;
+    }
     // If this is the first pass, make sure the divider is placed
     // INSIDE <div class="comments__history">
+    // -1 means we are adding a comment and the comment HTML
+    // needs to be placed at the TOP of the comments history
     if (i === 0) {
         ref.appendChild(commentDivider);
     } else if (i === -1) {
@@ -72,8 +83,6 @@ const createCommentHTML = (commentObj, i, ref) => {
     // Create the new comment div
     let commentDiv = document.createElement('div');
     let commentDivID = 'comment-' + i;
-    // let commentDivID = '';
-    // commentDivID = commentObj.id;
     commentDiv.classList.add('comment');
     commentDiv.id = commentDivID;
     insertAfter(commentDiv, commentDivider);
@@ -85,10 +94,6 @@ const createCommentHTML = (commentObj, i, ref) => {
     let commentImage = document.createElement('img');
     commentImage.classList.add('comment-image');
     commentImageDiv.appendChild(commentImage);
-    // Create image comment-image-del
-    // let commentImageDel = document.createElement('img');
-    // commentImageDel.classList.add('comment-image-del');
-    // commentImageDiv.appendChild(commentImageDel);
     // Create comment detail
     let commentDetail = document.createElement('div');
     commentDetail.classList.add('comment__detail');
@@ -114,7 +119,7 @@ const createCommentHTML = (commentObj, i, ref) => {
     let commentComments = document.createElement('div');
     commentComments.classList.add('comment__comments');
     commentComments.id = commentObj.id;
-    let onClickDiv = "printClicked(this)";
+    let onClickDiv = "deleteClicked(this)";
     commentComments.setAttribute('onclick', onClickDiv);
     insertAfter(commentComments, commentHeader);
     // Create comment comments - text
@@ -127,7 +132,6 @@ const createCommentHTML = (commentObj, i, ref) => {
 
 // Function - Insert final comment divider
 const insertCommentDivider = () => {
-    // let ref = document.getElementById(lastCommentId);
     let ref = document.getElementById('comment-' + (maxCommentIndex));
     let commentDivider = document.createElement('hr');
     commentDivider.classList.add('comment__divider');
@@ -139,15 +143,24 @@ const insertAfter = (element, referenceNode) => {
     referenceNode.parentNode.insertBefore(element, referenceNode.nextSibling);
 };
 
-// Function - Test div Click!
-const printClicked = (element) => {
-    console.log(element.id);
+// Function - Delete comment
+const deleteComment = (id, index) => {
+    axios.delete(`${BS_URL}${BS_COMMENTS}${id}${BS_API_KEY}`)
+    .then(result => { 
+        let commentsContainer = document.getElementById('comments-container');
+        let commentDetail = document.getElementById(`comment-${index}`);
+        commentsContainer.removeChild(commentDetail);
+        document.getElementById(`comment__divider-${index}`).remove();
+        comments.splice(index, 1);
+    })
+    .catch(err => console.log('Error=>', err.response));
+};
+
+// Function - User click on existing comment text...delete?
+const deleteClicked = (element) => {
+    let commentToDel = comments.find(({id}) => id === element.id);
     let confirmDel = confirm('Are you sure you want to delete this comment?');
-    if (confirmDel) {
-        alert('YUP! Delete it!');
-    } else {
-        alert('NOPE! Do not delete it!');
-    }
+    if (confirmDel) {deleteComment(element.id, commentToDel.index)}
 };
 
 // Function - Format current date (mm/dd/yyyy)
@@ -255,20 +268,21 @@ commentsForm.addEventListener('submit', function(e) {
         comment: e.target.commentText.value
     };
     // Add the newComment to the API
-    let commentPost = axios.post(`${BS_URL}${BS_COMMENTS}${BS_API_KEY}`, {
+    axios.post(`${BS_URL}${BS_COMMENTS}${BS_API_KEY}`, {
         name: newComment.name,
         comment: newComment.comment
     })
     .then(result => { 
+        maxCommentIndex += 1
         newComment = {
             name: result.data.name,
             comment: result.data.comment,
             id: result.data.id,
             likes: result.data.likes,
-            timestamp: result.data.timestamp
+            timestamp: result.data.timestamp,
+            index: maxCommentIndex
         }
         comments.splice(0, 0, newComment)
-        maxCommentIndex += 1
         displayComment(newComment, -1)
     })
     .catch(err => console.log('Error=>', err.response));

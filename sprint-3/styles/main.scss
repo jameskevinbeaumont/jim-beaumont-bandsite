@@ -350,7 +350,7 @@
             border: none;
             border-radius: 4px;
             &:hover {
-                background-color: $color-primary-cta-hover;
+                background-color: $color-secondary-cta-hover;
             }
             @include tablet {
                 width: 170px;
