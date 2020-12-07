@@ -11,7 +11,7 @@ let comments = [];
 axios.get(`${BS_URL}${BS_COMMENTS}${BS_API_KEY}`)
     .then(result => {
         for (let i = 0; i < result.data.length; i++) {
-            comment = {"name":result.data[i].name,"comment":result.data[i].comment,"id":result.data[i].id,"likes":result.data[i].likes,"timestamp":result.data[i].timestamp,"index":0}
+            comment = {"name":result.data[i].name,"comment":result.data[i].comment,"id":result.data[i].id,"likes":result.data[i].likes,"timestamp":result.data[i].timestamp,"commentindex":0}
             commentsAPI.push(comment)
         }
         // Examining the raw JSON data returned from the API
@@ -32,7 +32,7 @@ axios.get(`${BS_URL}${BS_COMMENTS}${BS_API_KEY}`)
         // Loop through the working comments array
         // and display the comments
         comments.forEach(function(comment, i) {
-            comment.index = i
+            comment.commentindex = i
             displayComment(comment, i)
             maxCommentIndex = i
         })
@@ -144,23 +144,38 @@ const insertAfter = (element, referenceNode) => {
 };
 
 // Function - Delete comment
-const deleteComment = (id, index) => {
+const deleteComment = (id, commentindex, arrayindex) => {
     axios.delete(`${BS_URL}${BS_COMMENTS}${id}${BS_API_KEY}`)
     .then(result => { 
+        // Remove the comment from the page
         let commentsContainer = document.getElementById('comments-container');
-        let commentDetail = document.getElementById(`comment-${index}`);
+        // commentindex was the original index position of the comment
+        // in the local comments object array when the page was rendered.
+        // This index was used to set the id of the div element containing
+        // the actual comment detail
+        let commentDetail = document.getElementById(`comment-${commentindex}`);
         commentsContainer.removeChild(commentDetail);
-        document.getElementById(`comment__divider-${index}`).remove();
-        comments.splice(index, 1);
+        document.getElementById(`comment__divider-${commentindex}`).remove();
+        // Remove the comment from the local comments object array - here
+        // we are using the arrayindex passed as this is the actual index of
+        // the comment deleted in the local comments object array. This value
+        // may have changed from the original when the page was rendered based
+        // on any subsequent deletions
+        comments.splice(arrayindex, 1);
     })
     .catch(err => console.log('Error=>', err.response));
 };
 
 // Function - User click on existing comment text...delete?
 const deleteClicked = (element) => {
+    // Locate the actual comments array object based on the id
     let commentToDel = comments.find(({id}) => id === element.id);
+    // Determine the actual index of the comment object in the 
+    // local comments object array as this will have changed if
+    // there have been deletions since the entire page was re-rendered
+    let arrayIndex = comments.findIndex(({id}) => id === element.id);
     let confirmDel = confirm('Are you sure you want to delete this comment?');
-    if (confirmDel) {deleteComment(element.id, commentToDel.index)}
+    if (confirmDel) {deleteComment(element.id, commentToDel.commentindex, arrayIndex)}
 };
 
 // Function - Format current date (mm/dd/yyyy)
@@ -280,7 +295,7 @@ commentsForm.addEventListener('submit', function(e) {
             id: result.data.id,
             likes: result.data.likes,
             timestamp: result.data.timestamp,
-            index: maxCommentIndex
+            commentindex: maxCommentIndex
         }
         comments.splice(0, 0, newComment)
         displayComment(newComment, -1)

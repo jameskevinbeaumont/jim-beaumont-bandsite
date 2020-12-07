@@ -23,8 +23,12 @@ const displayShow = (showObj, i) => {
     let ref;
     // Determine if we already have shows listed
     if (i == 0) {
+        // First, build the shows header for tablet/desktop
+        displayShowsHeader();
+        // Position at the shows__header just created
         ref = document.querySelector('.shows__header');
     } else {
+        // Positon at the last show detail section created
         ref = document.getElementById('show-' + (i - 1));
     };
     // Create the new show detail HTML
@@ -78,6 +82,30 @@ const displayShow = (showObj, i) => {
     let showDivider = document.createElement('hr');
     showDivider.classList.add('show__divider');
     document.getElementById(newDivID).appendChild(showDivider);
+};
+
+const displayShowsHeader = () => {
+    // Get the parent container
+    let showsDetail = document.querySelector('.shows-detail');
+    // Create the shows__header and place inside the parent container
+    let showsHeader = document.createElement('div');
+    showsHeader.classList.add('shows__header');
+    showsDetail.appendChild(showsHeader);
+    // Create the DATES header and place it inside shows__header
+    let showsHeaderDates = document.createElement('div');
+    showsHeaderDates.classList.add('shows__header-dates');
+    showsHeaderDates.innerText = 'DATES';
+    showsHeader.appendChild(showsHeaderDates);
+    // Create the VENUE header and place it inside shows__header
+    let showsHeaderVenue = document.createElement('div');
+    showsHeaderVenue.classList.add('shows__header-venue');
+    showsHeaderVenue.innerText = 'VENUE';
+    showsHeader.appendChild(showsHeaderVenue);
+    // Create the LOCATION header and place it inside shows__header
+    let showsHeaderLocation = document.createElement('div');
+    showsHeaderLocation.classList.add('shows__header-location');
+    showsHeaderLocation.innerText = 'LOCATION';
+    showsHeader.appendChild(showsHeaderLocation);
 };
 
 // Insert HTML after parent node function

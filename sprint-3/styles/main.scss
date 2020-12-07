@@ -196,7 +196,6 @@
             padding: 5vh 3.125% 6vh 3.125%;
         }
         @include desktop {
-            // @include padding-lr(1.75vw, 1.75vw);
             padding: 4vh 1.75vw 4.25vw 1.25vw;
         }
     }
@@ -296,7 +295,7 @@
             padding-left: 6%;
             margin-left: 6%;
             outline: none;
-            background-color: $color-form-input-bg;
+            background-color: $color-text-field-bg-fill;
             &:focus {
                 border: 2px solid $color-form-input-focus;
             }
@@ -323,7 +322,7 @@
             padding-left: 6%;
             padding-top: 2.25vh;
             outline: none;
-            background-color: $color-form-input-bg;
+            background-color: $color-text-field-bg-fill;
             &:focus {
                 border: 2px solid $color-form-input-focus;
             }
@@ -458,7 +457,7 @@
     }
     &__divider {
         /* Comment Block - Divider Element */
-        border-top: 2px solid $color-text-label-style;
+        border-top: 1px solid $color-divider;
         width: 100%;
         margin-top: 1.5vh;
         margin-bottom: 2.25vh;

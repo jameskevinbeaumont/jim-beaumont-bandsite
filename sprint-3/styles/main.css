@@ -1022,7 +1022,7 @@ a:hover {
   padding-left: 6%;
   margin-left: 6%;
   outline: none;
-  background-color: #E1E1E1;
+  background-color: #FAFAFA;
 }
 
 .comments__form-input:focus {
@@ -1070,7 +1070,7 @@ a:hover {
   padding-left: 6%;
   padding-top: 2.25vh;
   outline: none;
-  background-color: #E1E1E1;
+  background-color: #FAFAFA;
 }
 
 .comments__form-textarea:focus {
@@ -1292,7 +1292,7 @@ a:hover {
 
 .comment__divider {
   /* Comment Block - Divider Element */
-  border-top: 2px solid #AFAFAF;
+  border-top: 1px solid #E1E1E1;
   width: 100%;
   margin-top: 1.5vh;
   margin-bottom: 2.25vh;
